@@ -1,0 +1,56 @@
+.header {
+	background: #fff;
+	position: relative;
+	z-index: 5;
+
+	.container {
+		height: 50px;
+		position: relative;
+
+		@media (min-width: 768px) {
+			height: 60px;
+		}
+	}
+}
+
+.header__search {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.brand {
+	font-weight: 300;
+	@include font-size(2.1);
+
+	&--header {
+		position: relative;
+		top: 50%;
+		@include transform(translateY(-50%));
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+.logo {
+	width: 128px;
+	height: 24px;
+	background: url(../img/imoney-malaysia-logo.png) no-repeat;
+	background-size: 100%;
+	//margin: 0 auto;
+	display: inline-block;
+	vertical-align: 23px;
+	@include hide-text;
+
+
+
+	@media (min-width: 768px) {
+		//margin: 15px 0 0;
+		background-size: 160px 28px;
+		width: 160px;
+		height: 28px;
+		margin-right: 5px;
+	}
+}

@@ -1,0 +1,41 @@
+.footer {
+	background: #fff;
+
+	&__body {
+		background: $color-brand2;
+		color: #fff;
+		padding: $margin 0;
+
+		.container {
+			display: table;
+		}
+	}
+
+	&__description {
+		display: table-cell;
+		@include calc(width, "100% - 300px");
+		vertical-align: middle;
+		padding-right: $margin;
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__social {
+		list-style: none;
+		padding-left: 0;
+		display: table-cell;
+		width: 300px;
+		vertical-align: middle;
+
+		li {
+			display: inline-block;
+		}
+	}
+
+	&__bottom {
+		background: $color-darkgrey;
+		color: #fff;
+	}
+}

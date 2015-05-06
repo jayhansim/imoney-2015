@@ -1,0 +1,29 @@
+body {
+	background: $color-bodybg;
+	color: $color;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
+
+	.wf-active & {
+		font-family: $font;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $color-brand2;
+	@include transition(all .1s linear);
+
+	&:hover {text-decoration: underline}
+}
+
+// setting the block element margin
+p, ul, ol, dl, table, h1, h2, h3, h4, h5, h6, blockquote, pre {
+	margin: 0 0 $margin;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}

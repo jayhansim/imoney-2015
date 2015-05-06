@@ -1,0 +1,24 @@
+// var & mixin
+@import "bourbon";
+@import "inc/_var";
+@import "inc/_mixin";
+
+// normalize
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap-critical";
+//@import "inc/normalize";
+
+// critical parts
+@import "inc/_global";
+// @import "inc/_typography";
+// @import "inc/_layout";
+@import "inc/_header";
+@import "inc/_navigation";
+@import "inc/_before-content";
+
+@import "inc/_article";
+
+// @import "inc/_form";
+// @import "inc/_sidebar";
+@import "inc/_footer";
+
+// @import "inc/_misc";

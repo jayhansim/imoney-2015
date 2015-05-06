@@ -1,0 +1,53 @@
+//font
+$font: 'open_sansregular', 'Helvetica Neue', Arial, sans-serif;
+$font-light: 'open_sanslight', 'Helvetica Neue', Arial, sans-serif;
+$font-semibold: 'open_sanssemibold', 'Helvetica Neue', Arial, sans-serif;
+$font-bold: 'open_sansbold', 'Helvetica Neue', Arial, sans-serif;
+
+//color
+$color: #434c55; /* base font color */
+$color-lighter: #687179; /* #5e6a77 lighter font color */
+$color-reverse: #e2edf1; /* color for darkblue section */
+
+$color-footer: #687179;
+
+$color-footer-v2 : #88A4B3;
+
+$color-link-secondary: #708eab;
+
+$color-complement: #ef6700;
+$color-success: #44b74d;
+$color-alert: #da4f49;
+
+$color-bodybg: #eceff2 /*#f3f7f8*/;
+
+$color-lightblue: #b4e2f1;
+
+$color-brand1: #193d5a; // #004668; /* dark blue */
+$color-brand2: #1e7ea9; // #2c96b8 #1ca0cb; //#00a1c7; /* sea blue */
+$color-darkgrey: #344353;
+
+$lightgrey: #f6f8f9;
+
+// featured
+$color-gold: #ffdb76;
+$color-gold-lighter: #fbf4dd;
+$color-gold-border: lighten(#e3ca87,5);
+
+// best
+$color-best: #cd2372;
+
+// media queries from Bootstrap
+$screen-xs: 480px !default;
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm - 1) !default;
+$screen-sm-max: ($screen-md - 1) !default;
+$screen-md-max: ($screen-lg - 1) !default;
+
+// radius
+$radius: 3px;
+$margin: 20px;
