@@ -1,22 +1,46 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+		</main><!-- FOOTER -->
+    <footer role="contentinfo" class="footer">
+    	<div class="footer__header">
+    		<div class="container">
+    		  <div class="brand brand--footer"><a href="/"><span class="logo">iMoney.my</span>Learning Centre</a></div>
 
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
+    		</div>
+    		<a href="#" id="to-top" class="footer__to-header">Back to top</a>
+    	</div>
 
-			</footer>
-			<!-- /footer -->
+      <div class="footer__body">
+        <div class="container">
+          <div class="footer__description">
+            <p>iMoney.my is a leading financial comparison website and a trusted personal finance authority to help people make the most of their money.</p>
+          </div>
+          <ul class="footer__social">
+            <li><a href="#" class="icon__footer-fb">Facebook</a></li><!--
+            --><li><a href="#" class="icon__footer-tw">Twitter</a></li><!--
+            --><li><a href="#" class="icon__footer-gp">Google Plus</a></li><!--
+            --><li><a href="#" class="icon__footer-ig">Instagram</a></li><!--
+            --><li><a href="#" class="icon__footer-yt">Youtube</a></li><!--
+            --><li><a href="#" class="icon__footer-pt">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+        	<?php wp_nav_menu(
+        		array(
+        				'theme_location' => 'footer-menu',
+        				'menu_class'      => 'footer__nav',
+        				'items_wrap' => '<ul class="%2$s">%3$s</ul>'
 
-		</div>
-		<!-- /wrapper -->
+        			)
+        	); ?>
+          <p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+        </div>
+      </div>
+    </footer>
 
-		<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 
-		<!-- analytics -->
+    <!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
 		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
@@ -25,6 +49,5 @@
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
 		</script>
-
-	</body>
+  </body>
 </html>
