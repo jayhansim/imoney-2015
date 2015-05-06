@@ -81,12 +81,18 @@
                 </div>
               </div>
             </li>
-            <li class="nav__item"><a href="#">Latest</a></li>
+            <?php wp_nav_menu(
+            	array(
+            		'theme_location' => 'header-menu',
+            		'items_wrap' => '%3$s'
+            		)
+            ); ?>
+            <!-- <li class="nav__item"><a href="#">Latest</a></li>
             <li class="nav__item"><a href="#">Money Management</a></li>
             <li class="nav__item"><a href="#">Money Saving</a></li>
             <li class="nav__item"><a href="#">GST</a></li>
             <li class="nav__item"><a href="#">Insurance</a></li>
-            <li class="nav__item nav__item--main"><a href="#">Compare Products</a></li>
+            <li class="nav__item nav__item--main"><a href="#">Compare Products</a></li> -->
           </ul>
         </nav>
       </div>
@@ -97,6 +103,10 @@
     	<div class="container">
     		<div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a>
     	</div>
+
+    	<?php if ( function_exists('yoast_breadcrumb') ) {
+    		yoast_breadcrumb('<div class="breadcrumb">','</div>');
+    	} ?>
     </div>
 
     <main role="main" class="content">

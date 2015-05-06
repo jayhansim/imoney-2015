@@ -7,13 +7,15 @@
 
 	&__to-header {
 		@include hide-text;
-		width: 48px;
-		height: 48px;
+		width: 40px;
+		height: 40px;
 		background: $color-complement;
 		position: absolute;
 		border-radius: 50%;
-		bottom: -24px;
+		display: block;
+		bottom: -20px;
 		right: $margin;
+		overflow: hidden;
 
 		// &:before, &:after {
 		// 	content: '';
@@ -29,16 +31,39 @@
 		&:before {
 			content: '';
 			position: absolute;
-			width: 14px;
-			height: 14px;
+			width: 12px;
+			height: 12px;
 			color: #fff;
 			border-color: #fff #fff transparent transparent;
 			border-width: 2px 2px 0 0;
 			border-style: solid;
-			@include calc(top, '50% - 5px');
-			@include calc(left, '50% - 7px');
+			@include calc(top, '50% - 4px');
+			@include calc(left, '50% - 6px');
 			@include transform(rotate(-45deg));
+
 		}
+
+		&:hover {
+			@include transform(scale(1.2));
+			&:before {
+				@include animation(goup .6s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940));
+			}
+		}
+	}
+}
+
+@include keyframes('goup') {
+	0% {
+		@include transform(rotate(-45deg) translate(0, 0));
+	}
+	50% {
+		@include transform(rotate(-45deg) translate(30px, -30px));
+	}
+	50.01% {
+		@include transform(rotate(-45deg) translate(-30px, 30px));
+	}
+	100% {
+		@include transform(rotate(-45deg) translate(0, 0));
 	}
 }
 
@@ -53,6 +78,7 @@
 		background: $color-brand2;
 		color: #fff;
 		padding: $margin*2 0;
+		overflow: hidden;
 
 		.container {
 			display: table;

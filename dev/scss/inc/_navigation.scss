@@ -29,6 +29,19 @@
 	}
 }
 
+.navbar__list {
+	margin-bottom: 0;
+	padding-left: 0;
+
+	> .menu-item {
+		margin-left: $margin;
+
+		&:last-child {
+			float: right;
+		}
+	}
+}
+
 .nav__overlay {
 	display: none;
 }

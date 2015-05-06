@@ -2120,6 +2120,14 @@ img {
     .navbar li a {
       color: #fff; }
 
+.navbar__list {
+  margin-bottom: 0;
+  padding-left: 0; }
+  .navbar__list > .menu-item {
+    margin-left: 20px; }
+    .navbar__list > .menu-item:last-child {
+      float: right; }
+
 .nav__overlay {
   display: none; }
 
@@ -2128,6 +2136,19 @@ img {
   .before-content .ad--leaderboard {
     text-align: center;
     margin-bottom: 20px; }
+
+.breadcrumb {
+  font-size: 12px;
+  color: #687179; }
+  .breadcrumb a {
+    padding: 0 5px; }
+  .breadcrumb a:hover {
+    text-decoration: none; }
+  .breadcrumb_last {
+    display: inline-block;
+    padding-bottom: 3px;
+    margin: 0 5px;
+    border-bottom: 1px solid rgba(30, 126, 169, 0.5); }
 
 .featured {
   width: calc(33.3333% - 6px);
@@ -2212,36 +2233,92 @@ img {
     text-shadow: none;
     background-color: transparent;
     border: 0;
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     background: #ef6700;
     position: absolute;
     border-radius: 50%;
-    bottom: -24px;
-    right: 20px; }
+    display: block;
+    bottom: -20px;
+    right: 20px;
+    overflow: hidden; }
     .footer__to-header:before {
       content: '';
       position: absolute;
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       color: #fff;
       border-color: #fff #fff transparent transparent;
       border-width: 2px 2px 0 0;
       border-style: solid;
-      top: -webkit-calc(50% - 5px);
-      top: calc(50% - 5px);
-      left: -webkit-calc(50% - 7px);
-      left: calc(50% - 7px);
+      top: -webkit-calc(50% - 4px);
+      top: calc(50% - 4px);
+      left: -webkit-calc(50% - 6px);
+      left: calc(50% - 6px);
       -webkit-transform: rotate(-45deg);
       -moz-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       -o-transform: rotate(-45deg);
       transform: rotate(-45deg); }
+    .footer__to-header:hover {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2); }
+      .footer__to-header:hover:before {
+        -webkit-animation: goup 0.6s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        -o-animation: goup 0.6s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation: goup 0.6s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
+@-webkit-keyframes goup {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0); }
+  50% {
+    -webkit-transform: rotate(-45deg) translate(30px, -30px); }
+  50.01% {
+    -webkit-transform: rotate(-45deg) translate(-30px, 30px); }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(0, 0); } }
+@-moz-keyframes goup {
+  0% {
+    -moz-transform: rotate(-45deg) translate(0, 0); }
+  50% {
+    -moz-transform: rotate(-45deg) translate(30px, -30px); }
+  50.01% {
+    -moz-transform: rotate(-45deg) translate(-30px, 30px); }
+  100% {
+    -moz-transform: rotate(-45deg) translate(0, 0); } }
+@keyframes goup {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    -moz-transform: rotate(-45deg) translate(0, 0);
+    -ms-transform: rotate(-45deg) translate(0, 0);
+    -o-transform: rotate(-45deg) translate(0, 0);
+    transform: rotate(-45deg) translate(0, 0); }
+  50% {
+    -webkit-transform: rotate(-45deg) translate(30px, -30px);
+    -moz-transform: rotate(-45deg) translate(30px, -30px);
+    -ms-transform: rotate(-45deg) translate(30px, -30px);
+    -o-transform: rotate(-45deg) translate(30px, -30px);
+    transform: rotate(-45deg) translate(30px, -30px); }
+  50.01% {
+    -webkit-transform: rotate(-45deg) translate(-30px, 30px);
+    -moz-transform: rotate(-45deg) translate(-30px, 30px);
+    -ms-transform: rotate(-45deg) translate(-30px, 30px);
+    -o-transform: rotate(-45deg) translate(-30px, 30px);
+    transform: rotate(-45deg) translate(-30px, 30px); }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    -moz-transform: rotate(-45deg) translate(0, 0);
+    -ms-transform: rotate(-45deg) translate(0, 0);
+    -o-transform: rotate(-45deg) translate(0, 0);
+    transform: rotate(-45deg) translate(0, 0); } }
 .footer__body {
   background: #1e7ea9;
   color: #fff;
-  padding: 40px 0; }
+  padding: 40px 0;
+  overflow: hidden; }
   .footer__body .container {
     display: table; }
 .footer__description {
