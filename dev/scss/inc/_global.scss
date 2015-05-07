@@ -14,8 +14,12 @@ a {
 	text-decoration: none;
 	color: $color-brand2;
 	@include transition(all .1s linear);
+	text-decoration-color: rgba($color-brand2, .5);
 
-	&:hover {text-decoration: underline}
+	&:hover {
+		color: $color-brand2;
+		text-decoration: underline;
+	}
 }
 
 // setting the block element margin

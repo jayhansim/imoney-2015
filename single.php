@@ -1,67 +1,102 @@
 <?php get_header(); ?>
 
-	<main role="main">
-	<!-- section -->
-	<section>
+	<div class="content__main">
+		<div class="container">
+			<div class="content__left">
+				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+					<!-- article -->
+					<?php $classes = array('article', 'article--post'); ?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+						<div class="post__header">
+							<h1><?php the_title(); ?></h1>
+						</div>
+						<div class="meta">
+							<div class="meta">
+								<div class="meta__date">
+									<i class="icon icon__meta icon__meta--date"></i>
+									<time>
+										<?php the_time('F j, Y'); ?>
+									</time>
+								</div>
 
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<div class="meta__category">
+									<i class="icon icon__meta icon__meta--category"></i>
+									<div><?php the_category(', '); ?></div>
+								</div>
+								<?php if ( function_exists ( 'echo_tptn_post_count' ) ) : ?>
+								<div class="meta__views">
+									<i class="icon icon__meta icon__meta--views"></i>
+									 <?php echo_tptn_post_count(); ?>
+								</div>
+								<?php endif; ?>
+							</div>
+						</div>
+						<div class="post__share">
+						  <ul>
+						    <li class="share__total">50 shares</li>
+						    <li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb">Facebook</i><span>40</span></a></li>
+						    <li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw">Twitter</i><span>40</span></a></li>
+						    <li><a href="#"><i class="icon icon__share icon__share--mail">Email</i></a></li>
+						    <li><a href="#"><i class="icon icon__share icon__share--wa">WhatsApp</i></a></li>
+						  </ul>
+						</div>
+						<div class="post__content">
+							<p class="byline">
+								<span class="byline--author">By <?php the_author(); ?></span>
+								<span class="byline--illustrator">Illustration by Michelle Leong</span>
+							</p>
+							<?php the_content(); // Dynamic Content ?>
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
+							<div class="post__share post__share--bottom">
+								<h4>Share this article</h4>
+							  <ul>
+							    <li class="share__total">50 shares</li>
+							    <li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb">Facebook</i><span>40</span></a></li>
+							    <li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw">Twitter</i><span>40</span></a></li>
+							    <li><a href="#"><i class="icon icon__share icon__share--mail">Email</i></a></li>
+							    <li><a href="#"><i class="icon icon__share icon__share--wa">WhatsApp</i></a></li>
+							  </ul>
+							</div>
+						</div>
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
+						<?php if ( function_exists( 'echo_ald_crp' ) ) echo_ald_crp(); ?>
 
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-			<!-- /post details -->
+						<div class="post__comments">
+							<h4>Leave your comment</h4>
 
-			<?php the_content(); // Dynamic Content ?>
+							<p class="post__comments--loading"><span></span> Loading comments...</p>
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+							<div id="comments" class="fb-comments" data-href="<?php get_the_permalink(); ?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
 
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+						</div>
 
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+						<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+						<?php //comments_template(); ?>
 
-			<?php comments_template(); ?>
+					</article>
+					<!-- /article -->
 
-		</article>
-		<!-- /article -->
+				<?php endwhile; ?>
 
-	<?php endwhile; ?>
+				<?php else: ?>
 
-	<?php else: ?>
+					<!-- article -->
+					<article>
 
-		<!-- article -->
-		<article>
+						<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
 
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+					</article>
+					<!-- /article -->
 
-		</article>
-		<!-- /article -->
+				<?php endif; ?>
+			</div>
 
-	<?php endif; ?>
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
 
-	</section>
-	<!-- /section -->
-	</main>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

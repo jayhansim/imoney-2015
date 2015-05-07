@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 		<!-- section -->
 		<section class="content--home content__main">
 			<div class="container">

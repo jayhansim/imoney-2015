@@ -29,7 +29,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('post-thumbnails');
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
-    add_image_size('small', 120, '', true); // Small Thumbnail
+    add_image_size('small', 200, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
@@ -171,8 +171,8 @@ if (function_exists('register_sidebar'))
         'id' => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
     ));
 
     // Define Sidebar Widget Area 2
@@ -182,8 +182,8 @@ if (function_exists('register_sidebar'))
         'id' => 'widget-area-2',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
     ));
 }
 
@@ -205,6 +205,10 @@ function html5wp_pagination()
     echo paginate_links(array(
         'base' => str_replace($big, '%#%', get_pagenum_link($big)),
         'format' => '?paged=%#%',
+        'mid_size' => 3,
+        // 'prev_next' => false,
+        'prev_text' => __('&lsaquo; Prev '),
+        'next_text' => __('Next &rsaquo;'),
         'current' => max(1, get_query_var('paged')),
         'total' => $wp_query->max_num_pages
     ));

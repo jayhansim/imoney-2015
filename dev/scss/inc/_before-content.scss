@@ -10,9 +10,11 @@
 .breadcrumb {
 	font-size: 12px;
 	color: $color-lighter;
+	margin-left: -5px;
 
 	a {
 		padding: 0 5px;
+		color: $color-link-secondary;
 	}
 
 	a:hover {
@@ -22,6 +24,21 @@
 		display: inline-block;
 		padding-bottom: 3px;
 		margin: 0 5px;
-		border-bottom: 1px solid rgba($color-brand2,.5);
+	}
+}
+
+.page__title {
+	margin-bottom: 0;
+	color: $color-brand1;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	position: relative;
+	top: 6px;
+
+	span {
+		font-weight: 300;
+		color: $color-lighter;
+		padding-left: 5px;
 	}
 }

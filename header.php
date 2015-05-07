@@ -16,6 +16,26 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+    <div id="fb-root"></div>
+    <script>
+
+    function loadAPI() {
+      var js = document.createElement('script');
+      js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=428626330554993';
+      document.body.appendChild(js);
+    }
+
+    window.onscroll = function () {
+      var rect = document.getElementById('comments').getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        loadAPI();
+        window.onscroll = null;
+        $('.post__comments--loading').delay(1000).fadeOut();
+      }
+    }
+
+    </script>
+
 		<!-- Header -->
 		<header role="banner" class="header">
 			<div class="container">
@@ -101,12 +121,29 @@
     <!-- BEFORE CONTENT -->
     <div class="before-content">
     	<div class="container">
-    		<div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a>
-    	</div>
+    		<div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>
 
-    	<?php if ( function_exists('yoast_breadcrumb') ) {
-    		yoast_breadcrumb('<div class="breadcrumb">','</div>');
-    	} ?>
+        <?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {
+          yoast_breadcrumb('<div class="breadcrumb">','</div>');
+        } ?>
+        <?php $page = get_query_var('paged'); ?>
+        <?php if (is_home()): ?>
+          <h1 class="page__title">Latest Articles
+            <?php if($page != 0): ?>
+              <span>Page <?php echo $page; ?></span>
+            <?php endif; ?>
+          </h1>
+        <?php endif; ?>
+
+        <?php if(is_category()): ?>
+          <h1 class="page__title"><?php single_cat_title(); ?>
+            <?php if($page != 1): ?>
+              <span>Page <?php echo $page; ?></span>
+            <?php endif; ?>
+          </h1>
+        <?php endif; ?>
+
+      </div>
     </div>
 
     <main role="main" class="content">

@@ -1,19 +1,16 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+	<!-- section -->
+	<section class="content--home content__main">
+		<div class="container">
+			<div class="content__left">
+				<?php get_template_part('loop'); ?>
+				<?php get_template_part('pagination'); ?>
+			</div>
 
-			<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
-
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+			<?php get_sidebar(); ?>
+		</div>
+	</section>
+	<!-- /section -->
 
 <?php get_footer(); ?>

@@ -1,10 +1,24 @@
-//font
+// ------------------------------------
+// FONT
+// ------------------------------------
 $font: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 $font-helvetica: 'Helvetica Neue', Arial, sans-serif;
 $font-serif: serif;
 $font-merriweather: 'Merriweather', serif;
 
-//color
+// ------------------------------------
+// FONT SIZE
+// ------------------------------------
+$h1: 30px;
+$h2: 24px;
+$h3: 21px;
+$h4: 18px;
+$h5: 16px;
+$h6: 15px;
+
+// ------------------------------------
+// COLOR
+// ------------------------------------
 $color: #434c55; /* base font color */
 $color-lighter: #687179; /* #5e6a77 lighter font color */
 $color-reverse: #e2edf1; /* color for darkblue section */
@@ -37,7 +51,9 @@ $color-gold-border: lighten(#e3ca87,5);
 // best
 $color-best: #cd2372;
 
-// media queries from Bootstrap
+// ------------------------------------
+// MQ
+// ------------------------------------
 $screen-xs: 480px !default;
 $screen-sm: 768px !default;
 $screen-md: 992px !default;
@@ -48,6 +64,9 @@ $screen-xs-max: ($screen-sm - 1) !default;
 $screen-sm-max: ($screen-md - 1) !default;
 $screen-md-max: ($screen-lg - 1) !default;
 
-// radius
+// ------------------------------------
+// MISC
+// ------------------------------------
 $radius: 3px;
 $margin: 20px;
+

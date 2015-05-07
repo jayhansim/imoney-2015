@@ -1,33 +1,27 @@
-.container {
-	max-width: 1010px;
-	padding: 0 15px;
-	margin: 0 auto;
+.content__main, .content__infographic {
+	@include clearfix;
+	background: #fff;
 
-	&--main {
-		@include clearfix;
-		margin-bottom: 60px;
+	@at-root .content__main {
+		padding: $margin*2 0;
 	}
 }
-
-.main {
-	@include calc(width, "100% - 330px");
+.content__left {
+	width: calc(100% - 342px);
 	float: left;
+
+	@media (max-width: $screen-sm-max) {
+		width: auto;
+		float: none;
+	}
 }
 
-.aside {
-	width: 300px;
+.content__side {
+	max-width: 300px;
 	float: right;
-}
 
-@media (max-width: 991px) {
-	.main {
-		float: none;
-		width: auto;
-		margin-bottom: 60px;
-	}
-
-	.aside {
-		width: auto;
-		float: none;
+	@media (max-width: $screen-sm-max) {
+		display: none;
 	}
 }
+
