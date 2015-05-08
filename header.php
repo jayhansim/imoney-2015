@@ -16,15 +16,14 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+    <?php if(is_single()): ?>
     <div id="fb-root"></div>
     <script>
-
     function loadAPI() {
       var js = document.createElement('script');
       js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=428626330554993';
       document.body.appendChild(js);
     }
-
     window.onscroll = function () {
       var rect = document.getElementById('comments').getBoundingClientRect();
       if (rect.top < window.innerHeight) {
@@ -33,8 +32,8 @@
         $('.post__comments--loading').delay(1000).fadeOut();
       }
     }
-
     </script>
+    <?php endif; ?>
 
 		<!-- Header -->
 		<header role="banner" class="header">
@@ -123,9 +122,12 @@
     	<div class="container">
     		<div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>
 
+        <!-- Breadcrumb -->
         <?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {
           yoast_breadcrumb('<div class="breadcrumb">','</div>');
         } ?>
+
+        <!-- Listing page title -->
         <?php $page = get_query_var('paged'); ?>
         <?php if (is_home()): ?>
           <h1 class="page__title">Latest Articles
@@ -137,7 +139,25 @@
 
         <?php if(is_category()): ?>
           <h1 class="page__title"><?php single_cat_title(); ?>
-            <?php if($page != 1): ?>
+            <?php if($page != 0): ?>
+              <span>Page <?php echo $page; ?></span>
+            <?php endif; ?>
+          </h1>
+        <?php endif; ?>
+
+        <?php if(is_author()) : ?>
+          <h1 class="page__title">
+            <?php _e( 'Articles by ', 'html5blank' ); echo get_the_author(); ?>
+            <?php if($page != 0): ?>
+              <span>Page <?php echo $page; ?></span>
+            <?php endif; ?>
+          </h1>
+        <?php endif; ?>
+
+        <?php if(is_search()) : ?>
+          <h1 class="page__title">
+            <?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?>
+            <?php if($page != 0): ?>
               <span>Page <?php echo $page; ?></span>
             <?php endif; ?>
           </h1>

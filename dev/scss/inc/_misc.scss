@@ -5,35 +5,63 @@ hr {
 	margin: $margin 0;
 }
 
+// BLOCKQUOTE
 blockquote {
-	background: $color-pink;
-	padding: 20px 0 ;
+	background: $color-brand2;
+	padding: $margin 30px;
 	color: #fff;
+	border-left: 0;
+	font-family: $font;
+	font-style: italic;
+	font-size: $h4;
+	position: relative;
+	box-shadow: 3px 3px 0 rgba($color-brand2, .2);
 
-	.article & {
-		box-shadow: 300px 0 0 $color-pink, -300px 0 0 $color-pink;
+	&:before {
+		content: '\201C';
+		position: absolute;
+		left: -13px;
+		color: $color-brand1;
+		font-size: 60px;
+		font-family: $font-helvetica;
+		font-style: normal;
+		font-weight: 700;
+		top: -8px;
 	}
 
-	&.blockquote--light {
-		background: #f8f8f8;
-		color: $color;
+	&.quote--light {
+		background: $color-bodybg;
+		color: $color-lighter;
+		box-shadow: 3px 3px 0 rgba($color-bodybg,.5);
 
-		.article & {
-			box-shadow: 300px 0 0 #f8f8f8, -300px 0 0 #f8f8f8;
+		footer {
+			color: $color-lighter;
 
-			footer {
-				color: $color-lighter;
-				a {
-					color: $color-pink;
-				}
+			a, a:hover {
+				color: $color-brand2;
 			}
 		}
+	}
+
+	&.quote--complement {
+		background: $color-complement;
+		box-shadow: 3px 3px 0 rgba($color-complement,.2);
 	}
 
 	footer {
 		margin-top: $margin/2;
 		font-size: 13px;
-		color: #ffcdde;
+		font-style: normal;
+		color: #fff;
+		opacity: .75;
+
+		a {
+			color: #fff;
+
+			&:hover {
+				color: currentColor;
+			}
+		}
 
 		&::before {
 			content: '- ';
@@ -51,24 +79,74 @@ blockquote {
 	> *:last-child {
 		margin-bottom: 0;
 	}
+
+	&.pull-left {
+		float: left;
+		width: 45%;
+		margin: 5px 30px 0 0;
+	}
+
+	&.pull-right {
+		float: right;
+		width: 45%;
+		margin: 5px 0 0 30px;
+	}
 }
 
-pre {
-	border-top: 1px solid #eed3dc;
-	background-color: #f8f8f8;
-	@include background-image(
-		linear-gradient(to bottom,
-										transparent 29px,
-										#c2d4e9 29px,
-										transparent 30px,
-										transparent 59px,
-										#eed3dc 59px
-										));
-	background-size: 60px 60px;
-	font-family: monospace;
-	line-height: 30px;
-	box-shadow: 300px 0 0 #f8f8f8, -300px 0 0 #f8f8f8;
-	-moz-tab-size: 4;
-  -o-tab-size:   4;
-  tab-size:      4;
+// FLOATS
+.pull {
+	&-left {
+		float: left;
+	}
+	&-right {
+		float: right;
+	}
 }
+
+// WP CAPTION
+.wp-caption {
+	max-width: 100%;
+	padding-bottom: 10px;
+	margin-bottom: $margin;
+	position: relative;
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100px;
+		height: 2px;
+		content: '';
+		background: $color-brand2;
+	}
+
+	&-text {
+		font-size: 14px;
+		font-weight: 600;
+		font-family: $font;
+		margin-bottom: 0;
+		margin-top: 8px;
+	}
+
+	@at-root .alignleft {
+		width: 45% !important;
+		float: left;
+		margin: 5px 30px $margin 0;
+	}
+
+	@at-root .alignright {
+		width: 45% !important;
+		float: right;
+		margin: 5px 0 $margin 30px;
+	}
+
+	@at-root .aligncenter {
+		margin: 0 auto $margin;
+	}
+
+	@at-root img.aligncenter {
+		display: block;
+	}
+}
+
+// BLOCKS

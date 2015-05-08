@@ -14,7 +14,6 @@ a {
 	text-decoration: none;
 	color: $color-brand2;
 	@include transition(all .1s linear);
-	text-decoration-color: rgba($color-brand2, .5);
 
 	&:hover {
 		color: $color-brand2;

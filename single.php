@@ -10,8 +10,7 @@
 					<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
 						<div class="post__header">
 							<h1><?php the_title(); ?></h1>
-						</div>
-						<div class="meta">
+
 							<div class="meta">
 								<div class="meta__date">
 									<i class="icon icon__meta icon__meta--date"></i>
@@ -32,33 +31,42 @@
 								<?php endif; ?>
 							</div>
 						</div>
-						<div class="post__share">
-						  <ul>
-						    <li class="share__total">50 shares</li>
-						    <li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb">Facebook</i><span>40</span></a></li>
-						    <li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw">Twitter</i><span>40</span></a></li>
-						    <li><a href="#"><i class="icon icon__share icon__share--mail">Email</i></a></li>
-						    <li><a href="#"><i class="icon icon__share icon__share--wa">WhatsApp</i></a></li>
-						  </ul>
+						<div class="post__share--top">
+							<div class="post__share">
+							  <div class="share__total">50 shares</div>
+						    <div class="share__channels">
+						    	<ul>
+						    		<li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb"></i> Share <span>40</span></a></li><!--
+						    		--><li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw"></i> Tweet <span>40</span></a></li><!--
+						    		--><li><a href="#"><i class="icon icon__share icon__share--mail"></i> Email</a></li><!--
+						    		--><li><a href="#"><i class="icon icon__share icon__share--wa"></i> WhatsApp</a></li>
+						    	</ul>
+						    </div>
+							</div>
 						</div>
+
 						<div class="post__content">
 							<p class="byline">
-								<span class="byline--author">By <?php the_author(); ?></span>
+								<span class="byline--author">Written by <?php the_author_posts_link(); ?> </span>
 								<span class="byline--illustrator">Illustration by Michelle Leong</span>
 							</p>
 							<?php the_content(); // Dynamic Content ?>
-
-							<div class="post__share post__share--bottom">
-								<h4>Share this article</h4>
-							  <ul>
-							    <li class="share__total">50 shares</li>
-							    <li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb">Facebook</i><span>40</span></a></li>
-							    <li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw">Twitter</i><span>40</span></a></li>
-							    <li><a href="#"><i class="icon icon__share icon__share--mail">Email</i></a></li>
-							    <li><a href="#"><i class="icon icon__share icon__share--wa">WhatsApp</i></a></li>
-							  </ul>
+						</div>
+						<div class="post__share--bottom">
+							<h4>Share this article</h4>
+							<div class="post__share">
+							  <div class="share__total">50 shares</div>
+						    <div class="share__channels">
+						    	<ul>
+						    		<li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb"></i> Share <span>40</span></a></li><!--
+						    		--><li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw"></i> Tweet <span>40</span></a></li><!--
+						    		--><li><a href="#"><i class="icon icon__share icon__share--mail"></i> Email</a></li><!--
+						    		--><li><a href="#"><i class="icon icon__share icon__share--wa"></i> WhatsApp</a></li>
+						    	</ul>
+						    </div>
 							</div>
 						</div>
+
 
 						<?php if ( function_exists( 'echo_ald_crp' ) ) echo_ald_crp(); ?>
 

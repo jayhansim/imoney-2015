@@ -3,11 +3,6 @@
 // ------------------------------------
 .article {
 
-	a {
-		&:hover {
-			text-decoration-color: rgba($color-brand2, .5);
-		}
-	}
 	&--loop {
 		@include clearfix;
 		position: relative;
@@ -62,6 +57,7 @@
 .meta {
 	color: $color-lighter;
 	font-size: 13px;
+
 	.article--loop & {
 		width: 160px;
 		padding-top: 3px;
@@ -237,6 +233,194 @@
 	box-shadow: 300px 0 0 $color-bodybg, -300px 0 0 $color-bodybg, 600px 0 0 $color-bodybg, -600px 0 0 $color-bodybg,;
 }
 
+// ------------------------------------
+// ARTICLE Single
+// ------------------------------------
+.post {
+
+	&__header {
+		border-bottom: 1px solid rgba($color-lighter, .2);
+		padding-bottom: 15px;
+
+		h1 {
+			color: $color-brand1;
+			font-size: 36px;
+			font-weight: 700;
+			margin-bottom: 40px;
+		}
+
+	}
+
+	&.article--post .meta {
+		> * {
+			display: inline-block;
+			margin-right: $margin;
+			padding-bottom: 5px;
+			vertical-align: top;
+		}
+
+		&__category {
+			max-width: 50%;
+		}
+	}
+
+	// share
+	&__share {
+		border: 1px solid rgba($color-lighter, .2);
+		border-width: 1px 0;
+		position: relative;
+		overflow: hidden;
+		font-weight: 600;
+
+		&--top & {
+			border-top: none;
+		}
+
+		> * {
+			float: left;
+		}
+
+		h4 {
+			float: none;
+		}
+
+		@at-root .share {
+			&__total {
+				background-color: $color-brand2;
+				color: #fff;
+				padding: 15px;
+			}
+
+			&__channels {
+				ul {
+					list-style: none;
+					padding-left: 0;
+					margin-bottom: 0;
+					overflow: hidden;
+				}
+
+				li {
+					float: left;
+				}
+				a {
+					display: block;
+					padding: 15px;
+					color: $color-link-secondary;
+
+					&:hover {
+						text-decoration: none;
+						background-color: $color-bodybg;
+					}
+				}
+
+				span {
+					color: $color-lighter;
+					padding-left: 5px;
+					margin-left: 5px;
+					border-left: 1px solid rgba($color-lighter, .2);
+					display: inline-block;
+					line-height: 1.3;
+				}
+			}
+		}
+
+		@at-root .icon__share {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: url(../img/icon-share.png) no-repeat;
+			background-image: url(../img/icon-share.svg);
+			vertical-align: -5px;
+			margin-right: 3px;
+
+			&--tw {background-position: -20px 0}
+			&--mail {background-position: -40px 0}
+			&--wa {background-position: -60px 0}
+		}
+	}
+}
+
+
+// post content
+.post__content {
+	margin: 30px 0;
+	font-family: $font-merriweather;
+	font-size: 16px;
+	line-height: 1.7;
+
+	@at-root .byline {
+		font-weight: 700;
+		font-size: 14px;
+
+		&--author {
+			padding-right: $margin;
+		}
+	}
+
+	h2, h3, h4, h5, h6 {
+		color: $color-brand1;
+		font-weight: 400;
+		margin-top: 40px;
+	}
+
+	h2 {
+		font-size: $h1;
+		font-family: $font;
+		font-weight: 700;
+	}
+	h3 {
+		font-size: $h2;
+		font-weight: 700;
+	}
+
+	a:visited {
+		color: $color-link-secondary;
+	}
+
+	ul, ol {
+		padding-left: 0;
+		list-style-position: inside;
+	}
+
+	ol {
+		> li {
+			&:before {
+				display: none;
+			}
+		}
+
+		ul, ol {
+			padding-left: 17px;
+		}
+	}
+
+	ul {
+		list-style: none;
+
+		> li {
+			position: relative;
+			padding-left: 17px;
+
+			&:before {
+		    content: "";
+		    position: absolute;
+		    left: 2px;
+		    top: 9px;
+		    width: 5px;
+		    height: 5px;
+		    border-radius: 50%;
+		    //font-size: $h4;
+		    background-color: $color-brand2;
+			}
+		}
+	}
+
+
+}
+
+
+
+
 
 // ------------------------------------
 // RELATED POSTS
@@ -297,6 +481,10 @@
 	}
 }
 
+
+// ------------------------------------
+// POST COMMENTS
+// ------------------------------------
 .post__comments {
 	margin-top: 60px;
 	position: relative;
