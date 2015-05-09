@@ -331,6 +331,34 @@ add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' bu
 	ShortCode Functions
 \*------------------------------------*/
 
+function imoney_block($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'title' => '',
+        'type' => ''
+    ), $atts));
+
+    if(empty($type)) {
+        if(empty($title)) {
+            return '<div class="block">' .
+            '<div>' . $content .'</div></div>';
+        } else {
+            return '<div class="block">' .
+            '<div class="block__title">' . $title . '</div>' . '<div>' . $content .'</div></div>';
+        }
+    } else {
+        if(empty($title)) {
+            return '<div class="block block--' . esc_attr($type) . '">' .
+                '<div>' . $content .'</div></div>';
+        } else {
+            return '<div class="block block--' . esc_attr($type) . '">' .
+                '<div class="block__title">' . $title . '</div>' . '<div>' . $content .'</div></div>';
+        }
+
+    }
+}
+
+add_shortcode('block', 'imoney_block');
+
 // Shortcode Demo with Nested Capability
 // function html5_shortcode_demo($atts, $content = null)
 // {

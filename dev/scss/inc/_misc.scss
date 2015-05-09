@@ -129,13 +129,11 @@ blockquote {
 	}
 
 	@at-root .alignleft {
-		width: 45% !important;
 		float: left;
 		margin: 5px 30px $margin 0;
 	}
 
 	@at-root .alignright {
-		width: 45% !important;
 		float: right;
 		margin: 5px 0 $margin 30px;
 	}
@@ -149,4 +147,110 @@ blockquote {
 	}
 }
 
-// BLOCKS
+// TABLE
+
+// BLOCK
+.block {
+	background-color: #f1f4f6;
+	padding: 18px $margin;
+	margin-bottom: $margin;
+	position: relative;
+	font-size: 15px;
+	overflow: hidden;
+
+	.alignleft, .alignright {
+		margin-bottom: 5px;
+	}
+
+	&__title {
+		color: $color-lighter;
+		font-weight: 700;
+		font-family: $font;
+		margin-bottom: 5px;
+		font-size: 14px;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	&--summary, &--info, &--success, &--tips, &--warning {
+		padding-right: 90px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			background: url(../img/icon-contentblocks.png) no-repeat;
+			background: url(../img/icon-contentblocks.svg) no-repeat;
+			right: $margin;
+			top: 50%;
+			@include transform(translateY(-50%));
+		}
+	}
+
+	&--summary:after {
+		width: 48px;
+		height: 60px;
+		background-position: 0 0;
+	}
+	&--info {
+		background-color: #ccebf5;
+
+		.block__title { color: $color-brand2}
+
+		&:after {
+			width: 56px;
+			height: 62px;
+			background-position: -160px 0;
+		}
+	}
+	&--success {
+		background-color: #d0f1e7;
+
+		.block__title { color: #4a8b78}
+
+		&:after {
+			width: 56px;
+			height: 56px;
+			background-position: -216px 0;
+		}
+	}
+	&--tips {
+		background-color: #faf8e1;
+		color: #666554;
+
+		.block__title { color: #9c913e}
+
+		&:after {
+			width: 56px;
+			height: 69px;
+			background-position: -48px 0;
+		}
+	}
+	&--warning {
+		background-color: #ffd9cf;
+		color: #554543;
+
+		.block__title { color: #c82800}
+
+		&:after {
+			width: 56px;
+			height: 69px;
+			background-position: -104px 0;
+		}
+	}
+
+	&--content, &--content-reverse {
+		.block__title {
+			color: #fff;
+			background: $color-brand2;
+			margin: -18px #{-$margin} 18px;
+			padding: 9px $margin;
+		}
+	}
+
+	&--content-reverse {
+		background: $color;
+		color: #fff;
+	}
+}

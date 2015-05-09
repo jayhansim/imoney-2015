@@ -50,6 +50,14 @@
 								<span class="byline--author">Written by <?php the_author_posts_link(); ?> </span>
 								<span class="byline--illustrator">Illustration by Michelle Leong</span>
 							</p>
+
+							<!-- TLDR -->
+							<?php if(get_field('summary')): ?>
+							<div class="block block--summary">
+								<div class="block__title">Summary</div>
+								<p><?php the_field('summary'); ?></p>
+							</div>
+							<?php endif; ?>
 							<?php the_content(); // Dynamic Content ?>
 						</div>
 						<div class="post__share--bottom">

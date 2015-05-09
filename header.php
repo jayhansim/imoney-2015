@@ -163,6 +163,24 @@
           </h1>
         <?php endif; ?>
 
+        <?php if(is_month()) : ?>
+          <h1 class="page__title">
+            Archives for <?php single_month_title(' '); ?>
+            <?php if($page != 0): ?>
+              <span>Page <?php echo $page; ?></span>
+            <?php endif; ?>
+          </h1>
+        <?php endif; ?>
+
+        <?php if(is_tag()) : ?>
+          <h1 class="page__title">
+            Tag archives: <?php single_tag_title(); ?>
+            <?php if($page != 0): ?>
+              <span>Page <?php echo $page; ?></span>
+            <?php endif; ?>
+          </h1>
+        <?php endif; ?>
+
       </div>
     </div>
 
