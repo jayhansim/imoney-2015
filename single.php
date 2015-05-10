@@ -2,7 +2,7 @@
 
 	<div class="content__main">
 		<div class="container">
-			<div class="content__left">
+			<div class="content__left" id="main">
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 					<!-- article -->
@@ -83,7 +83,11 @@
 
 							<p class="post__comments--loading"><span></span> Loading comments...</p>
 
-							<div id="comments" class="fb-comments" data-href="<?php get_the_permalink(); ?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+							<div id="comments">
+								<?php echo do_shortcode('[fbcomments width="100%" count="off" num="3"]'); ?>
+							</div>
+
+							<!-- <div id="comments" class="fb-comments" data-href="<?php get_the_permalink(); ?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div> -->
 
 						</div>
 

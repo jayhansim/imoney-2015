@@ -1,0 +1,119 @@
+.btn {
+	box-shadow: inset 0 -2px 0 rgba(0,0,0,.2);
+	border: none;
+	padding-bottom: 8px;
+	@include transition(background-color 0.1s linear, color 0.1s linear);
+	font-family: $font;
+
+
+	&-lg {
+		padding: 12px 25px 13px;
+		// padding-top: 10px + 1px;
+		// padding-bottom: 10px + 2px;
+		@include font-size(1.6);
+		border-radius: $radius;
+		font-weight: 600;
+	}
+
+	&-complement {
+		color: #fff;
+		background-color: $color-complement;
+
+		&:hover, &:focus, &:active {
+			color: #fff;
+			background-color: #ef4400;
+		}
+
+		&--gradient {
+			@include background(linear-gradient(-180deg, #ef6700 0%, #ef4400 78%));
+			@include transition(none);
+
+			&:hover, &:focus, &:active {
+				background: #ef4400;
+			}
+		}
+	}
+	&-apply {
+		@extend .btn-success;
+	}
+	&-round {
+		border-radius:30px;
+		padding-left:20px;
+		padding-right: 20px;
+	}
+	&-info {
+		background-color: $color-brand2;
+	}
+
+	&-outline {
+		box-shadow: none;
+		padding-bottom: 6px;
+
+		&--white {
+			border: 1px solid #fff;
+
+			&:hover {
+				color: $color-brand2;
+				background: #fff;
+			}
+
+		}
+
+		&--dark {
+			border:1px solid $color-brand1;
+
+			&:hover {
+				background:lighten($color-brand1, 15);
+				color:#fff;
+			}
+		}
+	}
+}
+
+
+
+
+// form
+.input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .form-group-lg .form-control {
+	@include font-size(1.4);
+}
+
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+	margin-left: 0;
+}
+
+select {
+	border-radius: 3px;
+}
+
+.form-control, .input-group-addon {
+	border-color: #c6cfd2;
+}
+
+.input-group-addon {
+	background: #f3f4f6;
+}
+
+.form-inline {
+	.form-group {
+		margin-left: 7.5px;
+		margin-right: 7.5px;
+
+		@media (max-width: 767px) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+label {
+	font-weight: normal;
+}

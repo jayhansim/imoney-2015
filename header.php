@@ -16,25 +16,6 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-    <?php if(is_single()): ?>
-    <div id="fb-root"></div>
-    <script>
-    function loadAPI() {
-      var js = document.createElement('script');
-      js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=428626330554993';
-      document.body.appendChild(js);
-    }
-    window.onscroll = function () {
-      var rect = document.getElementById('comments').getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        loadAPI();
-        window.onscroll = null;
-        $('.post__comments--loading').delay(1000).fadeOut();
-      }
-    }
-    </script>
-    <?php endif; ?>
-
 		<!-- Header -->
 		<header role="banner" class="header">
 			<div class="container">

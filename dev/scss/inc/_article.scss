@@ -518,3 +518,19 @@
 @include keyframes(clockwise) {
 	to { @include transform(rotate(360deg) translatez(0));}
 }
+
+.fb-comments span
+
+{
+
+width: 100% !important;
+
+}
+
+.fb-comments iframe
+
+{
+
+width: 100% !important;
+
+}
