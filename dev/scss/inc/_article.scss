@@ -28,14 +28,9 @@
 		}
 
 		&--content {
-			font-family: $font-serif;
 
 			> *:last-child {
 				margin-bottom: 0;
-			}
-
-			.wf-active & {
-				font-family: $font-merriweather;
 			}
 		}
 	}
@@ -133,6 +128,7 @@
 	color: $color-link-secondary;
 	@include display(flex);
 	@include justify-content(center);
+	position: relative;
 
 	> * {
 		padding: 15px $margin;
@@ -149,6 +145,17 @@
 
 	.current {
 		box-shadow: inset 0 -3px 0 $color-brand2;
+	}
+
+	.prev {
+		position: absolute;
+		left: 0;
+		border-radius: $radius 0 0 $radius;
+	}
+	.next {
+		position: absolute;
+		right: 0;
+		border-radius: 0 $radius $radius 0;
 	}
 
 	// .prev-next {
@@ -235,6 +242,67 @@
 // ------------------------------------
 // ARTICLE Single
 // ------------------------------------
+
+// SMALL FEATURE IMAGE
+.post__featureimg {
+	+ .post__header {
+		padding-top: $margin*2;
+	}
+}
+
+// BIG FEATURE IMAGE
+.content__featureimg--big {
+	min-height: 300px;
+	height: 400px;
+	height: 45vh;
+	position: relative;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		@include linear-gradient(to top, transparent 0%, rgba(0,0,0,.5) 100%);
+		content: '';
+		z-index: 1;
+	}
+
+	.post__featureimg {
+		height: 100%;
+		background-size: cover;
+		position: relative;
+
+		&:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@include linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.8) 100%);
+			content: '';
+		}
+	}
+	.container {
+		height: 100%;
+		position: relative;
+	}
+	.post__header {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		border-bottom: none;
+		color: #fff;
+		z-index: 2;
+		padding-bottom: 40px;
+
+		h1 {
+			margin-bottom: 0;
+			color: #fff;
+		}
+	}
+}
+
 .post {
 
 	&__header {
@@ -287,7 +355,7 @@
 			&__total {
 				background-color: $color-brand2;
 				color: #fff;
-				padding: 15px;
+				padding: 15px $margin;
 			}
 
 			&__channels {
@@ -344,7 +412,6 @@
 .post__content {
 	@include clearfix;
 	margin: 30px 0;
-	font-family: $font-merriweather;
 	font-size: 16px;
 	line-height: 1.7;
 
@@ -379,7 +446,6 @@
 
 	ul, ol {
 		padding-left: 0;
-		list-style-position: inside;
 	}
 
 	ol {

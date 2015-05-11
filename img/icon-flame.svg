@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="55px" viewBox="0 0 48 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-flame</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Listing" sketch:type="MSArtboardGroup" transform="translate(-1111.000000, -991.000000)">
+            <g id="Group-Copy-16" sketch:type="MSLayerGroup" transform="translate(990.000000, 991.000000)">
+                <g id="icon-flame-+-Popular-post-this-we" transform="translate(64.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <g id="icon-flame" transform="translate(57.000000, 0.000000)">
+                        <g id="Group" transform="translate(0.770455, 0.000000)" fill="#EF4400">
+                            <ellipse id="Oval-2" cx="20.9675401" cy="33.7094692" rx="20.9675401" ry="21.0418502"></ellipse>
+                            <path d="M11.6649359,14.8709528 L27.9743885,5.70994843 L24.7487615,16.5702683 L11.6649359,14.8709528 Z" id="Path-31"></path>
+                            <path d="M22.2614322,15.0992502 L46.6269441,0.916497822 L38.8996217,31.2299318 L22.2614322,15.0992502 Z" id="Path-31"></path>
+                            <path d="M41.1649661,39.4050252 L38.7896,25.896833 L46.4301464,19.7623587 L41.1649661,39.4050252 Z" id="Path-31"></path>
+                        </g>
+                        <g id="Group-3" transform="translate(6.295012, 11.231040)" fill="#DE2C00">
+                            <ellipse id="Oval-2" cx="14.80176" cy="23.0953898" rx="14.80176" ry="14.701379"></ellipse>
+                            <path d="M8.23470854,9.93342144 L19.7481527,3.53287228 L17.4710636,11.1206878 L8.23470854,9.93342144 Z" id="Path-31"></path>
+                            <path d="M15.7151661,10.0929267 L32.9156797,0.183816317 L27.4606778,21.3630033 L15.7151661,10.0929267 Z" id="Path-31"></path>
+                            <path d="M29.059868,27.0747228 L27.3830094,17.6369095 L32.776753,13.3509161 L29.059868,27.0747228 Z" id="Path-31"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

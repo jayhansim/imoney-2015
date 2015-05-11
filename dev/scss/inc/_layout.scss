@@ -2,13 +2,14 @@
 	@include clearfix;
 	background: #fff;
 
-	@at-root .content__main {
-		padding: $margin*2 0;
-	}
+	// @at-root .content__main {
+	// 	padding: $margin*2 0;
+	// }
 }
 .content__left {
-	width: calc(100% - 342px);
+	@include calc(width, '100% - 342px');
 	float: left;
+	padding: $margin*2 0;
 
 	@media (max-width: $screen-sm-max) {
 		width: auto;
@@ -19,6 +20,7 @@
 .content__side {
 	max-width: 300px;
 	float: right;
+	padding: $margin*2 0;
 
 	@media (max-width: $screen-sm-max) {
 		display: none;

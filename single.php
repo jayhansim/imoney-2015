@@ -1,15 +1,38 @@
 <?php get_header(); ?>
 
 	<div class="content__main">
+		<?php if (have_posts()): the_post(); ?>
+			<?php if(get_field('feature_image') && get_field('big_or_small')) : ?>
+				<div class="content__featureimg--big">
+					<div class="post__featureimg" style="background-image: url(<?php the_field('feature_image') ?>);">
+						<div class="container">
+							<div class="post__header">
+								<h1><?php the_title(); ?></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
+		<?php rewind_posts(); ?>
+
 		<div class="container">
+
 			<div class="content__left" id="main">
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 					<!-- article -->
 					<?php $classes = array('article', 'article--post'); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+						<?php if(get_field('feature_image') && !get_field('big_or_small')) : ?>
+						<div class="post__featureimg">
+							<img src="<?php the_field('feature_image') ?>" alt="<?php the_title(); ?>">
+						</div>
+						<?php endif; ?>
 						<div class="post__header">
-							<h1><?php the_title(); ?></h1>
+							<?php if(get_field('feature_image') && !get_field('big_or_small')) : ?>
+								<h1><?php the_title(); ?></h1>
+							<?php endif; ?>
 
 							<div class="meta">
 								<div class="meta__date">

@@ -99,70 +99,90 @@
     </div>
 
     <!-- BEFORE CONTENT -->
-    <div class="before-content">
-    	<div class="container">
-    		<div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>
+    <?php if(is_single()) : ?>
 
-        <!-- Breadcrumb -->
-        <?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {
-          yoast_breadcrumb('<div class="breadcrumb">','</div>');
-        } ?>
-
-        <!-- Listing page title -->
-        <?php $page = get_query_var('paged'); ?>
-        <?php if (is_home()): ?>
-          <h1 class="page__title">Latest Articles
-            <?php if($page != 0): ?>
-              <span>Page <?php echo $page; ?></span>
-            <?php endif; ?>
-          </h1>
+      <?php if (have_posts()): the_post(); ?>
+        <?php if(get_field('feature_image') && !get_field('big_or_small')) : ?>
+          <div class="before-content">
+            <div class="container">
+              <div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>
+              <!-- Breadcrumb -->
+              <?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {
+                yoast_breadcrumb('<div class="breadcrumb">','</div>');
+              } ?>
+            </div>
+          </div>
         <?php endif; ?>
+      <?php endif; ?>
+      <?php rewind_posts(); ?>
 
-        <?php if(is_category()): ?>
-          <h1 class="page__title"><?php single_cat_title(); ?>
-            <?php if($page != 0): ?>
-              <span>Page <?php echo $page; ?></span>
-            <?php endif; ?>
-          </h1>
-        <?php endif; ?>
+    <?php else: ?>
 
-        <?php if(is_author()) : ?>
-          <h1 class="page__title">
-            <?php _e( 'Articles by ', 'html5blank' ); echo get_the_author(); ?>
-            <?php if($page != 0): ?>
-              <span>Page <?php echo $page; ?></span>
-            <?php endif; ?>
-          </h1>
-        <?php endif; ?>
+      <div class="before-content">
+        <div class="container">
+          <div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>
 
-        <?php if(is_search()) : ?>
-          <h1 class="page__title">
-            <?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?>
-            <?php if($page != 0): ?>
-              <span>Page <?php echo $page; ?></span>
-            <?php endif; ?>
-          </h1>
-        <?php endif; ?>
+          <!-- Breadcrumb -->
+          <?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {
+            yoast_breadcrumb('<div class="breadcrumb">','</div>');
+          } ?>
 
-        <?php if(is_month()) : ?>
-          <h1 class="page__title">
-            Archives for <?php single_month_title(' '); ?>
-            <?php if($page != 0): ?>
-              <span>Page <?php echo $page; ?></span>
-            <?php endif; ?>
-          </h1>
-        <?php endif; ?>
+          <!-- Listing page title -->
+          <?php $page = get_query_var('paged'); ?>
+          <?php if (is_home()): ?>
+            <h1 class="page__title">Latest Articles
+              <?php if($page != 0): ?>
+                <span>Page <?php echo $page; ?></span>
+              <?php endif; ?>
+            </h1>
+          <?php endif; ?>
 
-        <?php if(is_tag()) : ?>
-          <h1 class="page__title">
-            Tag archives: <?php single_tag_title(); ?>
-            <?php if($page != 0): ?>
-              <span>Page <?php echo $page; ?></span>
-            <?php endif; ?>
-          </h1>
-        <?php endif; ?>
+          <?php if(is_category()): ?>
+            <h1 class="page__title"><?php single_cat_title(); ?>
+              <?php if($page != 0): ?>
+                <span>Page <?php echo $page; ?></span>
+              <?php endif; ?>
+            </h1>
+          <?php endif; ?>
 
+          <?php if(is_author()) : ?>
+            <h1 class="page__title">
+              <?php _e( 'Articles by ', 'html5blank' ); echo get_the_author(); ?>
+              <?php if($page != 0): ?>
+                <span>Page <?php echo $page; ?></span>
+              <?php endif; ?>
+            </h1>
+          <?php endif; ?>
+
+          <?php if(is_search()) : ?>
+            <h1 class="page__title">
+              <?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?>
+              <?php if($page != 0): ?>
+                <span>Page <?php echo $page; ?></span>
+              <?php endif; ?>
+            </h1>
+          <?php endif; ?>
+
+          <?php if(is_month()) : ?>
+            <h1 class="page__title">
+              Archives for <?php single_month_title(' '); ?>
+              <?php if($page != 0): ?>
+                <span>Page <?php echo $page; ?></span>
+              <?php endif; ?>
+            </h1>
+          <?php endif; ?>
+
+          <?php if(is_tag()) : ?>
+            <h1 class="page__title">
+              Tag archives: <?php single_tag_title(); ?>
+              <?php if($page != 0): ?>
+                <span>Page <?php echo $page; ?></span>
+              <?php endif; ?>
+            </h1>
+          <?php endif; ?>
+
+        </div>
       </div>
-    </div>
+    <?php endif; ?>
 
     <main role="main" class="content">
