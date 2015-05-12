@@ -102,7 +102,7 @@
     <?php if(is_single()) : ?>
 
       <?php if (have_posts()): the_post(); ?>
-        <?php if(get_field('feature_image') && !get_field('big_or_small')) : ?>
+        <?php if(!get_field('feature_image') || !get_field('big_or_small')) : ?>
           <div class="before-content">
             <div class="container">
               <div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>

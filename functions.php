@@ -271,7 +271,6 @@ function html5_blank_view_article($more)
 //     return $html;
 // }
 
-
 /*------------------------------------*\
   Actions + Filters + ShortCodes
 \*------------------------------------*/

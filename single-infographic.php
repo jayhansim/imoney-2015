@@ -1,3 +1,10 @@
+<?php
+/*
+Single Post Template: Infographic
+Description: Custom template for infographic category post
+*/
+?>
+
 <?php get_header(); ?>
 
 	<div class="content__main">
@@ -18,17 +25,10 @@
 
 		<div class="container">
 
-			<div class="content__left" id="main">
-				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
-					<!-- article -->
-					<?php $classes = array('article', 'article--post'); ?>
-					<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
-						<?php if(get_field('feature_image') && !get_field('big_or_small')) : ?>
-						<div class="post__featureimg">
-							<img src="<?php the_field('feature_image') ?>" alt="<?php the_title(); ?>">
-						</div>
-						<?php endif; ?>
+			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+				<?php $classes = array('article', 'article--post', 'article--infographic'); ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+					<div class="infographic__header">
 						<div class="post__header">
 							<?php if(!get_field('big_or_small')) : ?>
 								<h1><?php the_title(); ?></h1>
@@ -67,7 +67,15 @@
 						    </div>
 							</div>
 						</div>
-
+					</div>
+					<div class="infographic__image">
+						<?php
+							if(get_field('infographic')) :
+								the_field('infographic');
+							endif;
+						?>
+					</div>
+					<div class="infographic__content">
 						<div class="post__content">
 							<p class="byline">
 								<span class="byline--author">Written by <?php the_author_posts_link(); ?> </span>
@@ -85,32 +93,6 @@
 							<?php endif; ?>
 							<?php the_content(); // Dynamic Content ?>
 
-							<!-- Interview Articles Content
-							// check if the flexible content field has rows of data -->
-							<?php if( have_rows('interview_content') ):
-							  // loop through the rows of data
-							  while ( have_rows('interview_content') ) : the_row();
-
-					        if( get_row_layout() == 'question_and_answer' ): ?>
-
-					        	<div class="interview interview--qna">
-											<div class="interview--qna__q">
-												<?php the_sub_field('question'); ?>
-											</div>
-											<div class="interview--qna__a">
-												<?php the_sub_field('answer'); ?>
-											</div>
-					        	</div>
-
-					        <?php elseif( get_row_layout() == 'text_and_image' ): ?>
-										<div class="interview">
-							        <?php the_sub_field('editor'); ?>
-							      </div>
-							    <?php endif;
-							  endwhile;
-							else :
-							    // no layouts found
-							endif; ?>
 						</div>
 						<div class="post__share--bottom">
 							<h4>Share this article</h4>
@@ -126,7 +108,6 @@
 						    </div>
 							</div>
 						</div>
-
 
 						<?php if ( function_exists( 'echo_ald_crp' ) ) echo_ald_crp(); ?>
 
@@ -144,28 +125,24 @@
 						</div>
 
 						<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+					</div>
 
-						<?php //comments_template(); ?>
+				</article>
+				<!-- /article -->
 
-					</article>
-					<!-- /article -->
+			<?php endwhile; ?>
 
-				<?php endwhile; ?>
+			<?php else: ?>
 
-				<?php else: ?>
+				<!-- article -->
+				<article>
 
-					<!-- article -->
-					<article>
+					<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
 
-						<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+				</article>
+				<!-- /article -->
 
-					</article>
-					<!-- /article -->
-
-				<?php endif; ?>
-			</div>
-
-			<?php get_sidebar(); ?>
+			<?php endif; ?>
 		</div>
 	</div>
 
