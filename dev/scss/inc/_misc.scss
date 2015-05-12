@@ -1,3 +1,23 @@
+// ------------------------------------
+// BLOCKQUOTE
+// ------------------------------------
+
+.ad--midrec-article {
+	text-align: center;
+	margin-bottom: $margin;
+}
+
+.ad--leaderboard {
+	.before-content & {
+		text-align: center;
+		margin-bottom: $margin;
+	}
+}
+
+// ------------------------------------
+// AD
+// ------------------------------------
+
 hr {
 	height: 10px;
 	background: #f8f8f8;

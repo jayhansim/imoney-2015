@@ -502,7 +502,7 @@
 
 	&__a {
 		position: relative;
-		background: $color-interview-yellow;
+		background: $lightgrey;
 		padding: $margin;
 
 		> *:last-child {
@@ -533,14 +533,71 @@
 			position: absolute;
 			top: -20px;
 			left: 20px;
-			border-color: transparent transparent $color-interview-yellow transparent;
+			border-color: transparent transparent $lightgrey transparent;
 		}
 	}
 }
 
 
 // infographic post
+.infographic__header {
+	margin-top: 40px;
+	@media (min-width: $screen-lg) {
+		.meta__category {
+			.post & {
+				max-width: 70%;
+			}
+		}
+	}
+}
 
+.infographic__image {
+	margin-top: 38px;
+}
+
+.infographic__content {
+	// .post__related {
+	// 	box-shadow: none;
+	// 	padding: 20px;
+
+	// 	a {
+	// 		box-shadow: none;
+	// 	}
+
+	// 	ul {
+	// 		li {
+	// 			float: none;
+	// 			width: auto;
+
+	// 			&:nth-last-child(2) {
+	// 				padding-bottom: 20px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	.post__share {
+		display: table;
+		width: 100%;
+		> * {
+			float: none;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	.share__total {
+		text-align: center;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.share__channels {
+		li {
+			width: 50%;
+		}
+	}
+}
 
 
 // ------------------------------------

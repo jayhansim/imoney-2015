@@ -93,6 +93,10 @@ Description: Custom template for infographic category post
 							<?php endif; ?>
 							<?php the_content(); // Dynamic Content ?>
 
+							<div class="ad ad--midrec-article">
+								<img src="http://placehold.it/300x250" alt="">
+							</div>
+
 						</div>
 						<div class="post__share--bottom">
 							<h4>Share this article</h4>
@@ -109,8 +113,6 @@ Description: Custom template for infographic category post
 							</div>
 						</div>
 
-						<?php if ( function_exists( 'echo_ald_crp' ) ) echo_ald_crp(); ?>
-
 						<div class="post__comments">
 							<h4>Leave your comment</h4>
 
@@ -122,6 +124,10 @@ Description: Custom template for infographic category post
 
 							<!-- <div id="comments" class="fb-comments" data-href="<?php get_the_permalink(); ?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div> -->
 
+						</div>
+
+						<div class="ad ad--midrec-article">
+							<img src="http://placehold.it/300x250" alt="">
 						</div>
 
 						<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
