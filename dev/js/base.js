@@ -75,6 +75,17 @@ $(document).ready(function(){
     });
   }
 
+  // infographic slick
+  if($('.slides--infographic').length) {
+    $('.slides--infographic').slick({
+      arrows: true,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      prevArrow: '<div class="infographic__nav--prev"></div>',
+      nextArrow: '<div class="infographic__nav--next"></div>'
+    });
+  }
+
   // newsletter signup
   if ($("#mc_embed_signup").length) {
 

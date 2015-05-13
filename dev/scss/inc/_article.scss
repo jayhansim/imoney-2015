@@ -181,64 +181,6 @@
 
 
 
-.featured {
-	width: calc(33.3333% - 6px);
-	height: calc(50% - 3px);
-	float: right;
-	position: relative;
-	overflow: hidden;
-	//padding-left: 6px;
-
-	&:first-child {
-		float: left;
-		width: 66.6667%;
-		height: 100%;
-		//padding-left: 0;
-	}
-
-	&:nth-child(2) {
-		margin-bottom: 6px;
-	}
-
-	&__image {
-		height: 100%;
-		overflow: hidden;
-		background: url(http://placehold.it/1280x800) no-repeat center;
-		background-size: cover;
-	}
-}
-
-.content__featured {
-	padding-bottom: 50px;
-
-	.container {
-		@include clearfix;
-		position: relative;
-		height: 50vh;
-	}
-}
-
-
-.featured__detail {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	padding: $margin;
-	background: #000;
-}
-
-.focus__body {
-	@include clearfix;
-	position: relative;
-	height: 40vh;
-}
-
-.content__featured--focus {
-	background-color: $color-bodybg;
-	padding-bottom: 80px;
-	box-shadow: 300px 0 0 $color-bodybg, -300px 0 0 $color-bodybg, 600px 0 0 $color-bodybg, -600px 0 0 $color-bodybg,;
-}
-
 // ------------------------------------
 // ARTICLE Single
 // ------------------------------------

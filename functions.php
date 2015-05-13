@@ -168,9 +168,9 @@ if (function_exists('register_sidebar'))
 {
   // Define Sidebar Widget Area 1
   register_sidebar(array(
-    'name' => __('Widget Area 1', 'html5blank'),
-    'description' => __('Description for this widget-area...', 'html5blank'),
-    'id' => 'widget-area-1',
+    'name' => __('Main Sidebar', 'html5blank'),
+    'description' => __('Widget area for Main Sidebar', 'html5blank'),
+    'id' => 'sidebar',
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h5>',
@@ -179,11 +179,11 @@ if (function_exists('register_sidebar'))
 
   // Define Sidebar Widget Area 2
   register_sidebar(array(
-    'name' => __('Widget Area 2', 'html5blank'),
-    'description' => __('Description for this widget-area...', 'html5blank'),
-    'id' => 'widget-area-2',
-    'before_widget' => '<div id="%1$s" class="%2$s">',
-    'after_widget' => '</div>',
+    'name' => __('Featured Topic', 'html5blank'),
+    'description' => __('Featured topic on front page', 'html5blank'),
+    'id' => 'featured-topic',
+    'before_widget' => '',
+    'after_widget' => '',
     'before_title' => '<h5>',
     'after_title' => '</h5>'
   ));
@@ -301,7 +301,7 @@ add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
 // Add Filters
 //add_filter('avatar_defaults', 'html5blankgravatar'); // Custom Gravatar in Settings > Discussion
-add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
+//add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 //add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation

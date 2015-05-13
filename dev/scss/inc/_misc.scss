@@ -449,10 +449,158 @@ table {
 }
 
 // ------------------------------------
+// INFOGRAPHIC
+// ------------------------------------
+
+.infographic__header {
+	text-align: center;
+	padding: $margin 0 40px;
+	background: url(../img/infographic-bg.png) center top no-repeat;
+	background-size: 793px 230px;
+
+	h5 a {
+		width: 295px;
+		height: 52px;
+		@include hide-text;
+		display: inline-block;
+		background: url(../img/infographic-header.png) no-repeat;
+		background: url(../img/infographic-header.svg) no-repeat;
+	}
+}
+
+.infographic__body {
+	background-color: $color-darkgrey;
+	background-size: 100%;
+	text-align: center;
+	padding: 0 30px;
+	position: relative;
+
+	.slides {
+		@include transform(translateY(-20px));
+	}
+
+	.slide {
+		color: #fff;
+
+		a {
+			color: #fff;
+
+			&:hover {
+				color: $color-brand2;
+				text-decoration: none;
+			}
+		}
+
+		.meta {
+			color: #fff;
+			opacity: .75;
+		}
+		.icon__meta--views {
+			float: none;
+			display: inline-block;
+			background-position: -36px 0;
+
+			+ * {
+				display: inline-block;
+				padding-left: 0;
+				vertical-align: 1px
+			}
+		}
+	}
+
+	img {
+		margin: 0 auto $margin;
+	}
+
+	h3 {
+		font-size: $h5;
+		padding: 0 $margin;
+	}
+}
+
+[class*="infographic__nav"] {
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	top: 50%;
+	margin-top: -24px;
+	background: #2ebac4;
+	cursor: pointer;
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		color: #fff;
+		border-color: #fff transparent transparent #fff;
+		border-width: 2px 0 0 2px;
+		border-style: solid;
+		@include calc(top, '50% - 6px');
+		@include calc(left, '50% - 4px');
+		@include transform(rotate(-45deg));
+	}
+}
+
+.infographic__nav {
+	&--prev {
+		left: -35px;
+
+		&:hover {
+			&:before {
+				@include animation(goleft .5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940));
+			}
+		}
+	}
+	&--next {
+		right: -35px;
+
+		&:before {
+			@include transform(rotate(135deg));
+			@include calc(left, '50% - 9px');
+		}
+
+		&:hover {
+			&:before {
+				@include animation(goright .5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940));
+			}
+		}
+	}
+}
+
+@include keyframes('goleft') {
+	0% {
+		@include transform(rotate(-45deg) translate(0, 0));
+	}
+	50% {
+		@include transform(rotate(-45deg) translate(-3px, -3px));
+	}
+	100% {
+		@include transform(rotate(-45deg) translate(0, 0));
+	}
+}
+
+@include keyframes('goright') {
+	0% {
+		@include transform(rotate(135deg) translate(0, 0));
+	}
+	50% {
+		@include transform(rotate(135deg) translate(-3px, -3px));
+	}
+	100% {
+		@include transform(rotate(135deg) translate(0, 0));
+	}
+}
+
+
+
+// ------------------------------------
 // 404
 // ------------------------------------
 .content--404 {
 	min-height: 350px;
+	padding-top: 40px;
 }
 
 
@@ -523,15 +671,17 @@ $gutter: 15px;
 }
 
 .a-center {text-align: center;}
+.a-right {text-align: right;}
 .pl20 {padding-left: 20px}
 .pr20 {padding-right: 20px}
+.pt20 {padding-top: 20px}
 .pb10 {padding-bottom: 10px}
 .p10 {padding: 10px}
 .bb {border-bottom: 1px solid $color-bodybg}
 .mt0 {margin-top: 0}
 .mb0 {margin-bottom: 0}
-.font-xsm {font-size: 12px;}
-.font-sm {font-size: 14px;}
+.font-xsm {font-size: $font-xsm}
+.font-sm {font-size: $font-sm}
 .control-label {font-size: 14px; padding-right: 0; font-weight: 700}
 .form-control {line-height: 1.7}
 .pl30 {padding-left: 30px}

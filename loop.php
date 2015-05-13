@@ -14,7 +14,7 @@
 		<div class="thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php if ( has_post_thumbnail()): // Check if thumbnail exists ?>
-					<?php the_post_thumbnail(array(100,100)); // Declare pixel size you need inside the array ?>
+					<?php the_post_thumbnail(); // Declare pixel size you need inside the array ?>
 				<?php else: ?>
 					<img src="http://placehold.it/100x100" alt="">
 				<?php endif; ?>

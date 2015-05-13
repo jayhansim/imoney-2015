@@ -67,6 +67,15 @@
 				color:#fff;
 			}
 		}
+
+		&--blue {
+			border:1px solid $color-brand2;
+
+			&:hover {
+				background: $color-brand2;
+				color:#fff;
+			}
+		}
 	}
 }
 
