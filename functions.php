@@ -122,7 +122,8 @@ function register_html5_menu()
     'header-menu' => __('Header Menu'), // Main Navigation
     'sidebar-menu' => __('Sidebar Menu'), // Sidebar Navigation
     'footer-menu' => __('Footer Menu'),
-    'extra-menu' => __('Extra Menu') // Extra Navigation if needed (duplicate as many as you need!)
+    'overlay-menu' => __('Overlay Menu'),
+    'overlay-menu-bm' => __('Overlay Menu BM')
   ));
 }
 

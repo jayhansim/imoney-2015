@@ -31,50 +31,35 @@
       <div class="container">
         <nav role="navigation" data-region="main-navigation">
           <ul class="navbar__list cf">
-            <li class="nav__item nav__item--all"><a href="#"><i></i>All Categories</a>
+            <li class="nav__item nav__item--all"><a href="#nav"><i></i>All Categories</a>
               <div id="nav" class="nav__overlay">
                 <div class="nav__overlay__inner">
                   <div class="nav__overlay__top">
-                    <h3>All Cetegories</h3><a href="#" class="nav__overlay__close"><i></i>Close</a>
+                    <h3>All Categories</h3><a href="#" class="nav__overlay__close"><i></i>Close</a>
                   </div>
                   <div class="nav__overlay__body">
-                    <div class="nav__overlay__col">
+                    <div class="nav__overlay__col nav__overlay__col--en">
                       <div class="nav__overlay__navset">
                         <h6>English</h6>
-                        <ul>
-                          <li><a href="#">Latest articles</a></li>
-                          <li><a href="#">Autos</a></li>
-                          <li><a href="#">Cards</a></li>
-                          <li><a href="#">Fixed Deposits</a></li>
-                          <li><a href="#">Properties</a></li>
-                          <li><a href="#">Infographics</a></li>
-                          <li><a href="#">Insurance</a></li>
-                          <li><a href="#">Investment</a></li>
-                          <li><a href="#">Personal Loan</a></li>
-                          <li><a href="#">Savings Account</a></li>
-                          <li><a href="#">Money Management</a></li>
-                          <li><a href="#">Tax</a></li>
-                          <li><a href="#">News Updates</a></li>
-                        </ul>
+                        <?php if (has_nav_menu('overlay-menu')) : ?>
+                        <?php wp_nav_menu(
+                          array(
+                            'theme_location' => 'overlay-menu'
+                            )
+                        ); ?>
+                        <?php endif; ?>
                       </div>
-                      <div class="nav__overlay__col nav__overlay__col--bm">
-                        <div class="nav__overlay__navset">
-                          <h6>Malay</h6>
-                          <ul>
-                            <li><a href="#">Artikel Terkini</a></li>
-                            <li><a href="#">Akaun Simpanan</a></li>
-                            <li><a href="#">Infografik</a></li>
-                            <li><a href="#">Insurans</a></li>
-                            <li><a href="#">Kad</a></li>
-                            <li><a href="#">Kemashyuran &amp;amp; Kekayaan</a></li>
-                            <li><a href="#">Pelaburan</a></li>
-                            <li><a href="#">Pengurusan Wang</a></li>
-                            <li><a href="#">Pinjaman Kereta</a></li>
-                            <li><a href="#">Pinjaman Peribadi</a></li>
-                            <li><a href="#">Pinjaman Perumahan</a></li>
-                            <li><a href="#">Simpanan Tetap</a></li>
-                          </ul>
-                        </div>
+                    </div>
+                    <div class="nav__overlay__col nav__overlay__col--bm">
+                      <div class="nav__overlay__navset">
+                        <h6>Malay</h6>
+                        <?php if (has_nav_menu('overlay-menu-bm')) : ?>
+                        <?php wp_nav_menu(
+                          array(
+                            'theme_location' => 'overlay-menu-bm'
+                            )
+                        ); ?>
+                        <?php endif; ?>
                       </div>
                     </div>
                   </div>
@@ -87,12 +72,6 @@
             		'items_wrap' => '%3$s'
             		)
             ); ?>
-            <!-- <li class="nav__item"><a href="#">Latest</a></li>
-            <li class="nav__item"><a href="#">Money Management</a></li>
-            <li class="nav__item"><a href="#">Money Saving</a></li>
-            <li class="nav__item"><a href="#">GST</a></li>
-            <li class="nav__item"><a href="#">Insurance</a></li>
-            <li class="nav__item nav__item--main"><a href="#">Compare Products</a></li> -->
           </ul>
         </nav>
       </div>
@@ -131,6 +110,15 @@
           <?php $page = get_query_var('paged'); ?>
           <?php if (is_home()): ?>
             <h1 class="page__title">Latest Articles
+              <?php if($page != 0): ?>
+                <span>Page <?php echo $page; ?></span>
+              <?php endif; ?>
+            </h1>
+          <?php endif; ?>
+
+          <!-- Listing page title -->
+          <?php if (is_page_template('page-bm.php')): ?>
+            <h1 class="page__title"><?php the_title(); ?>
               <?php if($page != 0): ?>
                 <span>Page <?php echo $page; ?></span>
               <?php endif; ?>

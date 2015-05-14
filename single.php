@@ -55,17 +55,7 @@
 							</div>
 						</div>
 						<div class="post__share--top">
-							<div class="post__share">
-							  <div class="share__total">50 shares</div>
-						    <div class="share__channels">
-						    	<ul>
-						    		<li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb"></i> Share <span>40</span></a></li><!--
-						    		--><li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw"></i> Tweet <span>40</span></a></li><!--
-						    		--><li><a href="#"><i class="icon icon__share icon__share--mail"></i> Email</a></li><!--
-						    		--><li><a href="#"><i class="icon icon__share icon__share--wa"></i> WhatsApp</a></li>
-						    	</ul>
-						    </div>
-							</div>
+							<?php get_template_part('inc/share'); ?>
 						</div>
 
 						<div class="post__content">
@@ -114,17 +104,7 @@
 						</div>
 						<div class="post__share--bottom">
 							<h4>Share this article</h4>
-							<div class="post__share">
-							  <div class="share__total">50 shares</div>
-						    <div class="share__channels">
-						    	<ul>
-						    		<li class="share__fb"><a href="#"><i class="icon icon__share icon__share--fb"></i> Share <span>40</span></a></li><!--
-						    		--><li class="share__tw"><a href="#"><i class="icon icon__share icon__share--tw"></i> Tweet <span>40</span></a></li><!--
-						    		--><li><a href="#"><i class="icon icon__share icon__share--mail"></i> Email</a></li><!--
-						    		--><li><a href="#"><i class="icon icon__share icon__share--wa"></i> WhatsApp</a></li>
-						    	</ul>
-						    </div>
-							</div>
+							<?php get_template_part('inc/share'); ?>
 						</div>
 
 

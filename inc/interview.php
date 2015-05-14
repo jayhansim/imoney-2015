@@ -11,12 +11,12 @@
 			);
 
 			// The Query
-			$query = new WP_Query( $args );
+			$wp_query = new WP_Query( $args );
 
 			// The Loop
-			if ( $query->have_posts() ) {
-				while ( $query->have_posts() ) {
-					$query->the_post(); ?>
+			if ( $wp_query->have_posts() ) {
+				while ( $wp_query->have_posts() ) {
+					$wp_query->the_post(); ?>
 					<div class="interview-slide">
 						<a href="<?php the_permalink()?>">
 							<img src="<?php the_field('portrait') ?>" alt="<?php the_title(); ?>" class="interview__portrait">

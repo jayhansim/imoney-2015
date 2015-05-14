@@ -311,6 +311,8 @@
 
 				li {
 					float: left;
+
+					&.share__whatsapp {display: none}
 				}
 				a {
 					display: block;

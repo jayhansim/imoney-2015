@@ -452,7 +452,7 @@ table {
 // INFOGRAPHIC
 // ------------------------------------
 
-.infographic__header {
+.infographic--list__header {
 	text-align: center;
 	padding: $margin 0 40px;
 	background: url(../img/infographic-bg.png) center top no-repeat;
@@ -468,7 +468,7 @@ table {
 	}
 }
 
-.infographic__body {
+.infographic--list__body {
 	background-color: $color-darkgrey;
 	background-size: 100%;
 	text-align: center;

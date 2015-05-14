@@ -22,12 +22,12 @@
 			);
 
 			// The Query
-			$query = new WP_Query( $args );
+			$wp_query = new WP_Query( $args );
 
 			// The Loop
-			if ( $query->have_posts() ) {
-				while ( $query->have_posts() ) {
-					$query->the_post(); ?>
+			if ( $wp_query->have_posts() ) {
+				while ( $wp_query->have_posts() ) {
+					$wp_query->the_post(); ?>
 				<a href="<?php the_permalink(); ?>" class="featured">
 					<div class="featured__image" style="background-image: url(<?php the_field('feature_image') ?>);"></div>
 					<div class="featured__detail">

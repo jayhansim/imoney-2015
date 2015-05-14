@@ -1,9 +1,9 @@
 <section class="content--home content__infographic">
   <div class="container">
-    <div class="infographic__header">
+    <div class="infographic--list__header">
       <h5><a href="/category/infographic">Infographic</a></h5>
     </div>
-    <div class="infographic__body">
+    <div class="infographic--list__body">
       <div class="slides slides--infographic">
 
         <?php // WP_Query arguments
@@ -13,12 +13,12 @@
           );
 
           // The Query
-          $query = new WP_Query( $args );
+          $wp_query = new WP_Query( $args );
 
           // The Loop
-          if ( $query->have_posts() ) {
-            while ( $query->have_posts() ) {
-              $query->the_post(); ?>
+          if ( $wp_query->have_posts() ) {
+            while ( $wp_query->have_posts() ) {
+              $wp_query->the_post(); ?>
               <div class="slide">
                 <a href="<?php the_permalink(); ?>">
                   <?php if (has_post_thumbnail()): ?>
@@ -52,6 +52,6 @@
         </ul>
       </div> -->
     </div>
-    <div class="infographic__footer a-right pt20"><a href="/category/infographic" class="btn btn-outline btn-outline--blue">View more infographics &raquo;</a></div>
+    <div class="infographic--list__footer a-right pt20"><a href="/category/infographic" class="btn btn-outline btn-outline--blue">View more infographics &raquo;</a></div>
   </div>
 </section>
