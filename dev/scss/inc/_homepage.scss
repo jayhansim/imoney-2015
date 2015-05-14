@@ -22,7 +22,16 @@
 	.container {
 		@include clearfix;
 		position: relative;
+		min-height: 400px;
 		height: 50vh;
+
+		@media (max-width: $screen-sm-max) {
+			height: 40vh;
+		}
+
+		@media (max-width: $screen-xs-max) {
+			height: auto;
+		}
 	}
 }
 
@@ -50,6 +59,14 @@
 
 	&:hover {
 		color: #fff;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		width: 100% !important;
+		height: 250px !important;
+		margin-bottom: 4px;
+		float: none;
+		display: block;
 	}
 }
 
@@ -183,7 +200,10 @@
 
 .focus__body {
 	position: relative;
-	height: 40vh;
+
+	@media (min-width: $screen-sm) {
+		height: 40vh;
+	}
 }
 
 

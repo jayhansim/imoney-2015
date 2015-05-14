@@ -2220,6 +2220,24 @@ h6, .h6 {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600; }
 
+@media (max-width: 991px) {
+  h1, .h1 {
+    font-size: 24px; }
+
+  h2, .h2 {
+    font-size: 21px; }
+
+  h3, .h3 {
+    font-size: 18px; }
+
+  h4, .h4 {
+    font-size: 16px; }
+
+  h5, .h5 {
+    font-size: 15px; }
+
+  h6, .h6 {
+    font-size: 14px; } }
 .content__main, .content__infographic {
   background: #fff; }
   .content__main:before, .content__main:after, .content__infographic:before, .content__infographic:after {
@@ -3136,12 +3154,19 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 50px; }
   .content__featured .container {
     position: relative;
+    min-height: 400px;
     height: 50vh; }
     .content__featured .container:before, .content__featured .container:after {
       content: " ";
       display: table; }
     .content__featured .container:after {
       clear: both; }
+    @media (max-width: 991px) {
+      .content__featured .container {
+        height: 40vh; } }
+    @media (max-width: 767px) {
+      .content__featured .container {
+        height: auto; } }
 
 .featured {
   width: calc(33.3333% - 4px);
@@ -3159,6 +3184,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 4px; }
   .featured:hover {
     color: #fff; }
+  @media (max-width: 767px) {
+    .featured {
+      width: 100% !important;
+      height: 250px !important;
+      margin-bottom: 4px;
+      float: none;
+      display: block; } }
 
 .featured__image {
   height: 100%;
@@ -3254,8 +3286,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 13px; }
 
 .focus__body {
-  position: relative;
-  height: 40vh; }
+  position: relative; }
+  @media (min-width: 768px) {
+    .focus__body {
+      height: 40vh; } }
 
 .section__title {
   display: inline-block;
