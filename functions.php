@@ -208,7 +208,7 @@ function html5wp_pagination()
   echo paginate_links(array(
     'base' => str_replace($big, '%#%', get_pagenum_link($big)),
     'format' => '?paged=%#%',
-    'mid_size' => 3,
+    'mid_size' => 2,
     // 'prev_next' => false,
     'prev_text' => __('&lsaquo; Prev '),
     'next_text' => __('Next &rsaquo;'),

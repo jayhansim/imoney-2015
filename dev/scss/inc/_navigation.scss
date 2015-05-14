@@ -18,10 +18,6 @@
 
 	.container {
 		position: relative;
-
-		@media (max-width: 767px) {
-			padding: 0;
-		}
 	}
 
 	li {
@@ -80,6 +76,16 @@
 
 	> li {
 		display: inline-block;
+
+		@media (max-width: $screen-xs-max) {
+			&.nav__item--all {
+				display: block;
+
+				> a {
+					text-align: center;
+				}
+			}
+		}
 	}
 
 	> .menu-item {
@@ -107,6 +113,18 @@
 				&:hover {
 					background: saturate(darken($color-brand2, 5),5);
 				}
+			}
+		}
+
+		@media (max-width: $screen-sm-max) {
+			&:not(:last-child) {
+				display: none
+			}
+		}
+
+		@media (max-width: $screen-xs-max) {
+			&:last-child {
+				display: none
 			}
 		}
 	}

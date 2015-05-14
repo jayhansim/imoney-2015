@@ -100,6 +100,12 @@
 		*:last-child {
 			margin-bottom: 0;
 		}
+
+		@media (max-width: $screen-xs-max) {
+			display: block;
+			width: auto;
+			margin-bottom: $margin;
+		}
 	}
 
 	&__social {
@@ -110,6 +116,13 @@
 		text-align: right;
 		margin-bottom: 0;
 		vertical-align: middle;
+
+		@media (max-width: $screen-xs-max) {
+			display: block;
+			width: auto;
+			text-align: left
+
+		}
 
 		li {
 			display: inline-block;
@@ -161,6 +174,7 @@
 
 		.container {
 			display: table;
+			width: 100%;
 
 			> * {
 				display: table-cell;
@@ -173,6 +187,20 @@
 
 				&:last-child {
 					width: 30%
+				}
+
+				@media (max-width: $screen-xs-max) {
+					display: block;
+
+					&:first-child {
+						width: auto;
+						margin-bottom: 0;
+					}
+					&:last-child {
+						width: auto;
+						text-align: left;
+						padding-top: 0;
+					}
 				}
 			}
 		}

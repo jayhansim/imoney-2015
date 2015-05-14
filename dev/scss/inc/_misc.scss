@@ -11,6 +11,10 @@
 	.before-content & {
 		text-align: center;
 		margin-bottom: $margin;
+
+		@media (max-width: $screen-xs-max) {
+			display: none;
+		}
 	}
 }
 

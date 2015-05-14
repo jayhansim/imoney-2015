@@ -36,4 +36,9 @@
 		color: $color-lighter;
 		padding-left: 5px;
 	}
+
+	@media (max-width: $screen-xs-max) {
+		font-size: 24px;
+		top: 4px;
+	}
 }

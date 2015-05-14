@@ -19,7 +19,9 @@
 		<!-- Header -->
 		<header role="banner" class="header">
 			<div class="container">
-			  <div class="brand brand--header"><a href="/"><span class="logo">iMoney.my</span>Learning Center</a></div>
+			  <div class="brand brand--header">
+          <a href="/">
+            <span class="logo">iMoney.my</span> Learning Center</a></div>
 			  <div class="header__search">
 			    <?php get_template_part('searchform'); ?>
 			  </div>
