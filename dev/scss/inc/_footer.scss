@@ -4,7 +4,7 @@
 
 .footer {
 	background: #fff;
-	padding-top: 100px;
+	//padding-top: 100px;
 
 	&__header {
 		position: relative;
@@ -171,15 +171,18 @@
 		background: $color-darkgrey;
 		color: lighten($color-lighter,30);
 		font-size: 13px;
+		padding: $margin 0;
 
 		.container {
 			display: table;
-			width: 100%;
+
+			@media (max-width: $screen-xs-max) {
+				display: block;
+			}
 
 			> * {
 				display: table-cell;
 				vertical-align: middle;
-				padding: $margin 0;
 
 				&:first-child {
 					width: 70%;
@@ -192,9 +195,9 @@
 				@media (max-width: $screen-xs-max) {
 					display: block;
 
+
 					&:first-child {
 						width: auto;
-						margin-bottom: 0;
 					}
 					&:last-child {
 						width: auto;
@@ -216,19 +219,32 @@
 	}
 	&__nav {
 		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
+		font-weight: 600;
 
 		li {
 			display: inline-block;
-			margin-left: $margin;
+			margin-right: $margin;
+		}
 
-			&:first-child {
-				margin-left: 0;
+		@media (max-width: $screen-xs-max) {
+			margin-bottom: $margin;
+
+			a {
+				display: block;
+				padding: 10px 0;
 			}
 		}
 	}
 
 	&__copyright {
 		text-align: right;
+		margin-bottom: 0;
+
+		@media (max-width: $screen-xs-max) {
+			font-size: 12px;
+		}
 	}
 }
 

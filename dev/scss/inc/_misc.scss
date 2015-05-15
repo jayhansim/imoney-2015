@@ -10,7 +10,7 @@
 .ad--leaderboard {
 	.before-content & {
 		text-align: center;
-		margin-bottom: $margin;
+		margin-top: $margin;
 
 		@media (max-width: $screen-xs-max) {
 			display: none;
@@ -177,6 +177,13 @@ blockquote {
 	}
 }
 
+@media (max-width: $screen-xs-max) {
+	[class*="align"] {
+		float: none;
+		display: block
+	}
+}
+
 // ------------------------------------
 // TABLE
 // ------------------------------------
@@ -282,9 +289,13 @@ table {
 	font-size: 15px;
 	overflow: hidden;
 
-	.alignleft, .alignright {
-		margin-bottom: 5px;
+	@media (min-width: $screen-sm) {
+		.alignleft, .alignright {
+			margin-bottom: 5px;
+		}
 	}
+
+
 
 	&__title {
 		color: $color-lighter;
@@ -385,24 +396,18 @@ table {
 // ------------------------------------
 .product {
 	box-shadow: 0px 1px 4px 0px rgba(0,0,0,.15);
-	display: table;
 	width: 100%;
 	margin-bottom: $margin;
 
-	> * {
-		display: table-cell;
-	}
-
 	&__image {
-		width: 200px;
 		padding: $margin;
+		text-align: center;
 	}
 
 	&__description {
 		padding: $margin;
-		padding-left: 0;
 		vertical-align: middle;
-		border-right: 1px solid rgba($color, .1);
+		border-top: 1px solid rgba($color, .1);
 
 		h4 {
 			margin-top: 0;
@@ -426,10 +431,35 @@ table {
 
 	&__cta {
 		padding: $margin;
-		width: 150px;
+		padding-top: 0;
+		vertical-align: top;
 
 		.btn {
 			font-weight: 600;
+			display: block;
+		}
+	}
+
+	@media (min-width: 600px) {
+		display: table;
+
+		> * {
+			display: table-cell;
+		}
+
+		&__image {
+			width: 200px;
+		}
+
+		&__description {
+			padding-left: 0;
+			border-right: 1px solid rgba($color, .1);
+			border-top: none;
+		}
+
+		&__cta {
+			padding-top: $margin;
+			width: 150px;
 		}
 	}
 
@@ -451,6 +481,73 @@ table {
 		}
 	}
 }
+
+// ------------------------------------
+// AUTHOR ARCHIVE PAGE
+// ------------------------------------
+
+$color-author: #d0f1e7;
+
+.block__author {
+	background: $color-author;
+	border-radius: $radius;
+	padding: $margin;
+	overflow: hidden;
+	margin-bottom: $margin;
+	position: relative;
+	box-shadow: inset 0 9px 0 $color-author, inset 0 10px 0 desaturate(darken($color-author, 10),10), 0 3px 0 rgba($color-author, .3);
+
+	&:after {
+		width: 40px;
+		height: 4px;
+		border-radius: 2px;
+		content: '';
+		position: absolute;
+		background: #fff;
+		left: 50%;
+		top: 8px;
+		@include transform(translateX(-50%));
+		box-shadow: 0 -1px 0 rgba(0,0,0,.1), inset 0 2px 0 rgba($color-author, .3);
+	}
+}
+
+.author__image {
+	float: left;
+
+	img {
+		border-radius: $radius;
+		width: 80px;
+		//border: 4px solid #fff;
+		box-shadow: 0 1px 0 rgba(#000, .1);
+		margin-top: 3px;
+	}
+}
+
+.author__info {
+	padding-left: 110px;
+
+	h2 {
+		margin-bottom: 5px;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: $screen-xs) {
+	.author__image {
+		img {
+			width: 60px;
+		}
+	}
+
+	.author__info {
+		padding-left: 75px;
+	}
+}
+
+
 
 // ------------------------------------
 // INFOGRAPHIC
@@ -671,6 +768,14 @@ $gutter: 15px;
 @for $i from 1 through 11 {
 	.fl-offset-#{$i} {
 		margin-left: percentage($i/$gridcolumn);
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	[class*="fl-"] {
+		float: none;
+		width: auto;
+		margin-left: 0;
 	}
 }
 

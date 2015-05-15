@@ -162,12 +162,16 @@
 // ------------------------------------
 .content__featured--focus {
 	background-color: $color-bodybg;
-	box-shadow: 300px 0 0 $color-bodybg, -300px 0 0 $color-bodybg, 600px 0 0 $color-bodybg, -600px 0 0 $color-bodybg, 900px 0 0 $color-bodybg, -900px 0 0 $color-bodybg;
+	box-shadow: 280px 0 0 $color-bodybg, -280px 0 0 $color-bodybg, 560px 0 0 $color-bodybg, -560px 0 0 $color-bodybg, 840px 0 0 $color-bodybg, -840px 0 0 $color-bodybg;
 	padding-bottom: 80px;
 
 	.featured:not(:first-child) {
 		h3 {
 			font-size: $h5;
+
+			@media (max-width: $screen-xs-max) {
+				font-size: $h4;
+			}
 		}
 	}
 }
