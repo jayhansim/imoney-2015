@@ -1,6 +1,6 @@
 <form method="get" id="searchform" role="search" action="<?php echo home_url(); ?>">
   <div class="form-group">
-    <input id="search" type="text" name="s" placeholder="Search articles" class="form-control">
+    <input tabindex="-1" id="search" type="text" name="s" placeholder="Search articles" class="form-control">
     <button type="submit" class="btn btn-search">
       <svg width="16" height="16" viewBox="0 0 16 16" xmls="http://www.w3.org/2000/svg">
         <g>
@@ -9,5 +9,5 @@
       </svg>
     </button>
   </div>
-
 </form>
+

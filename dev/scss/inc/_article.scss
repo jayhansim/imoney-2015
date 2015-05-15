@@ -383,10 +383,10 @@
 				li {
 					float: left;
 
-					&.share__whatsapp {display: none}
+					&.share__wa {display: none}
 
 					@media (max-width: $screen-sm-max) {
-						&.share__email b, &.share__whatsapp b {
+						&.share__wa b {
 							display: none;
 						}
 					}
@@ -450,7 +450,7 @@
 }
 
 // is--mobile
-.share--is-mobile {
+.is-mobile .post__share--top {
 	position: fixed;
 	bottom: 0;
 	background: #ccc;
@@ -492,6 +492,10 @@
 		// 	width: 25%;
 		// }
 	}
+}
+
+.is-mobile .post__share--bottom {
+	display: none;
 }
 
 

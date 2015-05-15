@@ -216,6 +216,10 @@
 				text-decoration: none;
 			}
 		}
+
+		.is-mobile & {
+			padding-bottom: 80px;
+		}
 	}
 	&__nav {
 		list-style: none;

@@ -7,7 +7,7 @@
 		<div id="mc_embed_signup">
 		  <form action="//imoney.us5.list-manage.com/subscribe/post?u=1db2c05f99f2ff02ccfb6ee11&amp;id=2e2b9463f9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate data-api="b43fd3fb4d6ffc1b3470593e3e6a7b16-us5" data-id="2e2b9463f9" data-us="us5">
 				<div class="input-group input-group-lg">
-		      <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" data-description="Newsletter" data-action = "Input" placeholder="your@email.com" required>
+		      <input tabindex="-2" type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" data-description="Newsletter" data-action = "Input" placeholder="your@email.com" required>
 		      <span class="input-group-btn">
 		        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-complement" data-action = "Submit" data-value="Newsletter" data-description="Form">
 		      </span>

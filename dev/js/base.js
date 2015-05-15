@@ -328,13 +328,25 @@ $(document).ready(function(){
 
     // show whatsapp
     if(isMobile.phone) {
-      $('.share__whatsapp').show();
-      $('.post__share--top').addClass('share--is-mobile');
-      $('.post__share--bottom').hide();
+      $('.share__wa').show();
+      $('body').addClass('is-mobile');
     }
 
   }
 
+  // search on mobile
+  if ($('.btn-search-toggle')) {
+    $('.btn-search-toggle').on('click', function(e){
+      $('body').toggleClass('search-active');
+      e.preventDefault();
+    });
+  }
+
+  // $('body').on('click', function() {
+  //   if($(this).hasClass('search-active')) {
+  //     $(this).removeClass('search-active');
+  //   }
+  // });
 })
 
 
