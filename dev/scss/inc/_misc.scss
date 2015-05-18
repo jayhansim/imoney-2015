@@ -19,12 +19,19 @@
 }
 
 // ------------------------------------
-// AD
+// DL
+// ------------------------------------
+dd {
+	margin-bottom: $margin;
+}
+
+// ------------------------------------
+// HR
 // ------------------------------------
 
 hr {
-	height: 10px;
-	background: #f8f8f8;
+	height: 1px;
+	background: rgba($color, .1);
 	border: none;
 	margin: $margin 0;
 }
@@ -110,12 +117,24 @@ blockquote {
 		float: left;
 		width: 45%;
 		margin: 5px 30px 0 0;
+
+		@media (max-width: $screen-xs) {
+			float: none;
+			width: auto;
+			margin: 0 0 $margin;
+		}
 	}
 
 	&.pull-right {
 		float: right;
 		width: 45%;
 		margin: 5px 0 0 30px;
+
+		@media (max-width: $screen-xs) {
+			float: none;
+			width: auto;
+			margin: 0 0 $margin;
+		}
 	}
 }
 
@@ -160,12 +179,12 @@ blockquote {
 
 	@at-root .alignleft {
 		float: left;
-		margin: 5px 30px $margin 0;
+		margin: 8px 30px $margin 0;
 	}
 
 	@at-root .alignright {
 		float: right;
-		margin: 5px 0 $margin 30px;
+		margin: 8px 0 $margin 30px;
 	}
 
 	@at-root .aligncenter {
@@ -180,7 +199,8 @@ blockquote {
 @media (max-width: $screen-xs-max) {
 	[class*="align"] {
 		float: none;
-		display: block
+		display: block;
+		margin: 0 0 $margin;
 	}
 }
 
@@ -486,7 +506,7 @@ table {
 // AUTHOR ARCHIVE PAGE
 // ------------------------------------
 
-$color-author: #d0f1e7;
+$color-author: $color-gold;
 
 .block__author {
 	background: $color-author;
@@ -495,7 +515,7 @@ $color-author: #d0f1e7;
 	overflow: hidden;
 	margin-bottom: $margin;
 	position: relative;
-	box-shadow: inset 0 9px 0 $color-author, inset 0 10px 0 desaturate(darken($color-author, 10),10), 0 3px 0 rgba($color-author, .3);
+	box-shadow: inset 0 9px 0 $color-author, inset 0 10px 0 desaturate(darken($color-author, 10),10);
 
 	&:after {
 		width: 40px;
@@ -695,7 +715,6 @@ $color-author: #d0f1e7;
 }
 
 
-
 // ------------------------------------
 // 404
 // ------------------------------------
@@ -781,6 +800,7 @@ $gutter: 15px;
 
 .a-center {text-align: center;}
 .a-right {text-align: right;}
+.p20 {padding: 20px}
 .pl20 {padding-left: 20px}
 .pr20 {padding-right: 20px}
 .pt20 {padding-top: 20px}
@@ -800,4 +820,15 @@ $gutter: 15px;
 label.error {font-size: 14px}
 .form-control.error {border-color: $color-alert}
 
+.table-transparent {
+	background-color: transparent;
 
+	tr:hover {
+		td {
+			background-color: transparent;
+		}
+	}
+}
+.w-6 {width: 50%}
+
+.v-top {vertical-align: top}

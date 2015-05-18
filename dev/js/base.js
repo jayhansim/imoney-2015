@@ -158,7 +158,11 @@ if(!(b.options.swipe===!1||"ontouchend"in document&&b.options.swipe===!1||b.opti
 
 $(document).ready(function(){
 
-  // overlay menu
+
+// ----------------------------
+//  overlay menu
+// ----------------------------
+
   var navOverlay = $('#nav');
   $('a[href="#nav"]').on('click', function(e){
     navOverlay.fadeIn();
@@ -186,24 +190,36 @@ $(document).ready(function(){
     }
   });
 
-  // back to top button at footer
+
+
+// ----------------------------
+// back to top button at footer
+// ----------------------------
+
   $('.footer__to-header').on('click', function(e){
     $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutQuart');
     e.preventDefault();
   });
 
-  // wrapping the table press tables
-  if($('.tablepress').length) {
-    console.log('hello');
-    $('.tablepress').wrap('<div class="table-responsive"></div>');
+// ----------------------------
+// wrapping the table press tables
+// ----------------------------
+  if($('.post__content table').length ) {
+    $('.post__content table').wrap('<div class="table-responsive"></div>');
   }
 
-  // apply lettering js style to top 10 widget header
+
+// ----------------------------
+// apply lettering js style to top 10 widget header
+// ----------------------------
   if($('.widget_widget_tptn_pop').length) {
     $('.widget_widget_tptn_pop').find('h5').lettering('words');
   }
 
-  // interview slick
+
+// ----------------------------
+// interview slick
+// ----------------------------
   if($('.interview__slides').length) {
     $('.interview__slides').slick({
       dots: true,
@@ -214,7 +230,10 @@ $(document).ready(function(){
     });
   }
 
-  // infographic slick
+
+// ----------------------------
+// infographic slick
+// ----------------------------
   if($('.slides--infographic').length) {
     $('.slides--infographic').slick({
       arrows: true,
@@ -248,7 +267,9 @@ $(document).ready(function(){
     });
   }
 
-  // newsletter signup
+// ----------------------------
+// newsletter signup
+// ----------------------------
   if ($("#mc_embed_signup").length) {
 
     var mcapikey = $('#mc-embedded-subscribe-form').data('api'),
@@ -292,7 +313,9 @@ $(document).ready(function(){
     });
   };
 
-  // calculate share and hide whatsapp if is non mobile
+// ----------------------------
+// calculate share and hide whatsapp if is non mobile
+// ----------------------------
   if($('body').hasClass('single')) {
 
     // calculate shares
@@ -334,13 +357,30 @@ $(document).ready(function(){
 
   }
 
-  // search on mobile
+// ----------------------------
+// search on mobile
+// ----------------------------
   if ($('.btn-search-toggle')) {
     $('.btn-search-toggle').on('click', function(e){
       $('body').toggleClass('search-active');
+      if($('body').hasClass('search-active')) {
+        $('#searchform').find('input').focus();
+      } else {
+        $('#searchform').find('input').blur();
+      }
       e.preventDefault();
     });
   }
+
+  // remove class if user resize browser
+  $(window).resize(function(){
+    if ( $(this).width() >= 768 && $('body').hasClass('search-active')){
+      $('body').css('padding-top', '0');
+    } else if ($(this).width() <= 768 && $('body').attr('style')) {
+      $('body').removeAttr('style');
+    }
+    // if($('body').width)
+  });
 
   // $('body').on('click', function() {
   //   if($(this).hasClass('search-active')) {

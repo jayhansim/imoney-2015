@@ -113,6 +113,11 @@ function html5blank_styles()
 {
   wp_register_style('basecss', get_template_directory_uri() . '/css/base.css', array(), '1.0', 'all');
   wp_enqueue_style('basecss'); // Enqueue it!
+
+  if(is_singular('home-buying-guide')) {
+    wp_register_style('hbgcss', get_template_directory_uri() . '/css/hbg.css', array(), '1.0', 'all');
+    wp_enqueue_style('hbgcss'); // Enqueue it!
+  }
 }
 
 // Register HTML5 Blank Navigation
@@ -167,7 +172,7 @@ function remove_category_rel_from_category_list($thelist)
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar'))
 {
-  // Define Sidebar Widget Area 1
+  // Main Sidebar
   register_sidebar(array(
     'name' => __('Main Sidebar', 'html5blank'),
     'description' => __('Widget area for Main Sidebar', 'html5blank'),
@@ -178,13 +183,35 @@ if (function_exists('register_sidebar'))
     'after_title' => '</h5>'
   ));
 
-  // Define Sidebar Widget Area 2
+  // Featured Focus Topic
   register_sidebar(array(
     'name' => __('Featured Topic', 'html5blank'),
     'description' => __('Featured topic on front page', 'html5blank'),
     'id' => 'featured-topic',
     'before_widget' => '',
     'after_widget' => '',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>'
+  ));
+
+  // Leaderboard
+  register_sidebar(array(
+    'name' => __('Leaderboard', 'html5blank'),
+    'description' => __('Leaderboard ad', 'html5blank'),
+    'id' => 'leaderboard',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>'
+  ));
+
+  // Home Buying Guide
+  register_sidebar(array(
+    'name' => __('Home Buying Guide', 'html5blank'),
+    'description' => __('Home Buying Guide Sidebar', 'html5blank'),
+    'id' => 'home-buying-guide',
+    'before_widget' => '<div id="%1$s" class="%1$s %2$s">',
+    'after_widget' => '</div>',
     'before_title' => '<h5>',
     'after_title' => '</h5>'
   ));

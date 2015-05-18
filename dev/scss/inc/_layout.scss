@@ -19,12 +19,12 @@
 }
 
 .content__side {
-	max-width: 300px;
+	width: 300px;
 	float: right;
 	padding: $margin*2 0;
 
 	@media (max-width: $screen-sm-max) {
-		max-width: none;
+		width: auto;
 		float: none;
 		//display: none;
 		padding: 0;

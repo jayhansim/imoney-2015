@@ -311,6 +311,7 @@
 			font-size: 36px;
 			font-weight: 700;
 			margin-bottom: 40px;
+			margin-left: -2px;
 
 			@media (max-width: $screen-sm) {
 				font-size: $h1;
@@ -319,7 +320,7 @@
 
 	}
 
-	&.article--post .meta {
+	@at-root .article--post .meta {
 		> * {
 			display: inline-block;
 			margin-right: $margin;
@@ -386,9 +387,9 @@
 					&.share__wa {display: none}
 
 					@media (max-width: $screen-sm-max) {
-						&.share__wa b {
-							display: none;
-						}
+						// &.share__wa b {
+						// 	display: none;
+						// }
 					}
 					@media (max-width: $screen-xs) {
 						b {
@@ -458,6 +459,10 @@
 	left: 0;
 	z-index: 5;
 
+	a {
+		color: #fff;
+	}
+
 	.post__share {
 		border-bottom: 0;
 	}
@@ -517,7 +522,7 @@
 
 	h2, h3, h4, h5, h6 {
 		color: $color-brand1;
-		font-weight: 400;
+		//font-weight: 400;
 		margin-top: 40px;
 	}
 
@@ -535,20 +540,12 @@
 		color: $color-link-secondary;
 	}
 
-	ul, ol {
+	ul {
 		padding-left: 0;
 	}
 
 	ol {
-		> li {
-			&:before {
-				display: none;
-			}
-		}
-
-		ul, ol {
-			padding-left: 17px;
-		}
+		padding-left: 24px;
 	}
 
 	ul {
@@ -556,13 +553,13 @@
 
 		> li {
 			position: relative;
-			padding-left: 17px;
+			padding-left: 24px;
 
 			&:before {
 		    content: "";
 		    position: absolute;
-		    left: 2px;
-		    top: 9px;
+		    left: 8px;
+		    top: 10px;
 		    width: 5px;
 		    height: 5px;
 		    border-radius: 50%;
@@ -740,8 +737,7 @@
 			width: 50%;
 			display: table;
 			padding-bottom: 20px;
-
-
+			overflow: hidden;
 
 			> * {
 				display: table-cell;
@@ -749,6 +745,8 @@
 
 				&:first-child {
 					width: 80px;
+					height: 80px;
+					overflow: hidden;
 				}
 
 				&:last-child {

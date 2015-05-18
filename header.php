@@ -89,13 +89,13 @@
     </div>
 
     <!-- BEFORE CONTENT -->
-    <?php if(is_single()) : ?>
+    <?php if(is_single() && !is_singular('home-buying-guide')) : ?>
 
       <?php if (have_posts()): the_post(); ?>
         <?php if(!get_field('feature_image') || !get_field('big_or_small')) : ?>
           <div class="before-content">
             <div class="container">
-              <div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>
+              <?php dynamic_sidebar('leaderboard'); ?>
               <!-- Breadcrumb -->
               <?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {
                 yoast_breadcrumb('<div class="breadcrumb">','</div>');
@@ -106,11 +106,13 @@
       <?php endif; ?>
       <?php rewind_posts(); ?>
 
+    <?php elseif (is_singular('home-buying-guide')) : ?>
+
     <?php else: ?>
 
       <div class="before-content">
         <div class="container">
-          <div class="ad ad--leaderboard"><a href="#"><img src="http://placehold.it/728x90"></a></div>
+          <?php dynamic_sidebar('leaderboard'); ?>
 
           <!-- Breadcrumb -->
           <?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {

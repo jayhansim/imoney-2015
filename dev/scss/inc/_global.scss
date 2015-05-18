@@ -4,7 +4,7 @@ body {
 	font-size: 14px;
 	font-family: $font-helvetica;
 	line-height: 1.5;
-	@include transition(transform .5s ease-in-out);
+	@include transition(all .5s ease-in-out);
 
 	.wf-active & {
 		font-family: $font;
