@@ -832,3 +832,29 @@ label.error {font-size: 14px}
 .w-6 {width: 50%}
 
 .v-top {vertical-align: top}
+
+
+// ------------------------------------
+// IE - http://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/media-tests/
+// ------------------------------------
+
+// IE 10 and 9
+@media screen and (min-width:0\0) {
+	.pagination {
+
+		.page-numbers {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		@media (max-width: $screen-xs-max) {
+			.page-numbers {
+				display: none;
+
+				&.current, &.prev, &.next {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}

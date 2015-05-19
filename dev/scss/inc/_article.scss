@@ -166,15 +166,10 @@
 	@include display(flex);
 	@include justify-content(center);
 	position: relative;
+	text-align: center;
 
 	> * {
 		padding: 15px $margin;
-
-		@media (max-width: $screen-xs-max) {
-			&:not(.current) {
-				display: none;
-			}
-		}
 	}
 
 	.dots {
@@ -209,6 +204,16 @@
 	.next {
 		right: 0;
 		border-radius: 0 $radius $radius 0;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		.page-numbers {
+			display: none;
+
+			&.current, &.prev, &.next {
+				display: inline-block;
+			}
+		}
 	}
 
 	// .prev-next {

@@ -14,12 +14,12 @@
             <p>iMoney.my is a leading financial comparison website and a trusted personal finance authority to help people make the most of their money.</p>
           </div>
           <ul class="footer__social">
-            <li><a href="#" class="icon__footer-fb">Facebook</a></li><!--
-            --><li><a href="#" class="icon__footer-tw">Twitter</a></li><!--
-            --><li><a href="#" class="icon__footer-gp">Google Plus</a></li><!--
-            --><li><a href="#" class="icon__footer-ig">Instagram</a></li><!--
-            --><li><a href="#" class="icon__footer-yt">Youtube</a></li><!--
-            --><li><a href="#" class="icon__footer-pt">Pinterest</a></li>
+            <li><a href="https://www.facebook.com/IMoney.my" class="icon__footer-fb">Facebook</a></li><!--
+            --><li><a href="https://twitter.com/iMoneyMY" class="icon__footer-tw">Twitter</a></li><!--
+            --><li><a href="https://plus.google.com/+ImoneyMy-official/posts" class="icon__footer-gp">Google Plus</a></li><!--
+            --><li><a href="http://instagram.com/imoney_malaysia" class="icon__footer-ig">Instagram</a></li><!--
+            --><li><a href="http://www.youtube.com/channel/UCqVreFR5Sm2bznDk58WN3tw" class="icon__footer-yt">Youtube</a></li><!--
+            --><li><a href="http://www.pinterest.com/imoneymy/" class="icon__footer-pt">Pinterest</a></li>
           </ul>
         </div>
       </div>
